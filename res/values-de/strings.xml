@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">BPM-Meter</string>
+    
+    <string name="label_takte">Takte</string>
+    <string name="label_beats">Schläge</string>
+    
+    <string name="button_tap">TAP</string>
+    <string name="button_reset">Zurücksetzen</string>
+    
+    <string-array name="string_takte">
+        <item >4/4</item>
+        <item >3/4</item>
+        <item >2/4</item>
+    </string-array>
+    <string name="promt_takte">Wählen sie die Taktart</string>
+    
+    <string-array name="string_taps">
+        <item>Takte</item>
+        <item>Schläge</item>
+    </string-array>
+    <string name="promt_taps">Was tippen sie?</string>
+
+    <string name="label_tpm">TpM</string>
+    <string name="label_td">sec</string>
+    <string name="label_bpm">BpM</string>
+    <string name="label_bd">sec</string>
+    
+    <string name="message_parseError">Fehler beim Lesen der Zahl</string>
+    <string name="button_parseError">OK</string>
+    <string name="about_title">Über</string>
+    <string name="menu_about">Über</string>
+    <string name="menu_settings">Einstellungen</string>
+    <string name="about_message">© Lars Grefer</string>
+    
+    
+    <string name="settings_title">Einstellungen</string>
+    <string name="settings_showResetInLandscape_title">Zusätzlicher "Zurücksetzen"-Button im Querformat</string>
+    <string name="settings_showResetInLandscape_summary">Um einen zusätzlichen "Zurücksetzen"-Button im Querformat auf nach-Gingerbread Geräten (Version 3.x oder höher) anzuzeigen, aktivieren sie diese Option</string>
+	<string name="settings_longPressReset_title">LongPress Reset</string>
+	<string name="settings_longPressReset_summary">Den "TAP"-Button gedrückt zu halten, wird die gemessenen Daten zurücksetzen, wenn diese Option aktiviert ist</string>
+
+	<string-array name="settings_design_entries">
+	    <item >Standard</item>
+		<item >Dunkel</item>
+		<item >Hell</item>   
+	</string-array>
+	
+	<string-array name="settings_design_values">
+	    <item >0</item>
+		<item >1</item>
+		<item >3</item>
+	</string-array>
+	
+	<string name="settings_design_title">Design</string>
+	<string name="settings_design_dialogTitle">Wähle ein Design</string>
+	<string name="settings_design_summary">Funktioniert eventuell nicht mit jeder Android-Version</string>
+
+</resources>

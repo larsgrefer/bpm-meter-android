@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">BPM-Meter</string>
+    <string name="label_takte">Measures</string>
+    <string name="label_beats">Beats</string>
+    <string name="button_tap">TAP</string>
+    <string name="button_reset">Reset</string>
+
+    <string-array name="string_takte">
+        <item>4/4</item>
+        <item>3/4</item>
+        <item>2/4</item>
+    </string-array>
+
+    <string name="promt_takte">Select the measure-type</string>
+
+    <string-array name="string_taps">
+        <item>Measures</item>
+        <item>Beats</item>
+    </string-array>
+
+    <string name="promt_taps">What are you tapping?</string>
+    <string name="label_tpm">MpM</string>
+    <string name="label_td">sec</string>
+    <string name="label_bpm">BpM</string>
+    <string name="label_bd">sec</string>
+    <string name="message_parseError">Error while reading the number</string>
+    <string name="button_parseError">OK</string>
+    
+    <string name="menu_about">About</string>
+    <string name="menu_settings">Settings</string>
+    <string name="menu_reset">Reset</string>
+    
+    <string name="about_message">© Lars Grefer</string>   <string name="about_title">About</string>
+    <string name="about_facebook">Facebook</string>
+    
+    <string name="settings_title">Settings</string>
+    
+    <string name="settings_category_AppFunctions">App Functions</string>
+    <string name="settings_category_Appereance">Appereance</string>
+    
+    <string name="settings_showResetInLandscape_title">Additional "Reset"-Button in landscape orientation</string>
+    <string name="settings_showResetInLandscape_summary">To show an additional "Reset"-Button in landscape orientation on past-Gingerbread devices (Version 3.x or newer), check this</string>
+	<string name="settings_longPressReset_title">LongPress Reset</string>
+	<string name="settings_longPressReset_summary">Long-pressing the "TAP"-Button will reset the measured data, if this option is checked</string>
+	
+	<string-array name="settings_design_entries">
+	    <item >Default</item>
+		<item >Dark</item>
+		<item >Light</item>   
+	</string-array>
+	
+	<string-array name="settings_design_values">
+	    <item >0</item>
+		<item >1</item>
+		<item >3</item>
+	</string-array>
+	
+	<string name="settings_design_title">Design</string>
+	<string name="settings_design_dialogTitle">Choose a Design:</string>
+	<string name="settings_design_summary">May not work on every platform</string>
+    
+</resources>

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android" >
+
+    <PreferenceCategory
+        android:title="@string/settings_category_AppFunctions"
+        >
+        <CheckBoxPreference
+            android:defaultValue="false"
+            android:key="showResetInLandscape"
+            android:summary="@string/settings_showResetInLandscape_summary"
+            android:title="@string/settings_showResetInLandscape_title" android:icon="@android:drawable/ic_menu_always_landscape_portrait"/>
+        <CheckBoxPreference
+            android:defaultValue="true"
+            android:key="longPressReset"
+            android:summary="@string/settings_longPressReset_summary"
+            android:title="@string/settings_longPressReset_title" android:icon="@android:drawable/ic_menu_close_clear_cancel"/>
+    </PreferenceCategory>
+    <PreferenceCategory
+        android:title="@string/settings_category_Appereance"
+        android:icon="@android:drawable/ic_menu_gallery"
+        >
+        <ListPreference
+            android:dialogTitle="@string/settings_design_dialogTitle"
+            android:entries="@array/settings_design_entries"
+            android:entryValues="@array/settings_design_values"
+            android:key="design"
+            android:summary="@string/settings_design_summary"
+            android:title="@string/settings_design_title"
+            android:icon="@android:drawable/ic_menu_gallery"
+            android:dialogIcon="@android:drawable/ic_menu_gallery"
+            />
+        <CheckBoxPreference 
+            android:key="autocalcTap"
+            android:defaultValue="false"
+            />
+        <EditTextPreference 
+            android:key="tapSize" 
+            android:defaultValue="75sp" 
+            android:icon="@android:drawable/ic_menu_edit" 
+            android:dialogIcon="@android:drawable/ic_menu_edit" 
+            android:dialogTitle="Test" 
+            android:positiveButtonText="OK" 
+            android:dependency="autocalcTap"/>
+     </PreferenceCategory>
+
+</PreferenceScreen>

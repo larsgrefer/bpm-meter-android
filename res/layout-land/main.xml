@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:baselineAligned="true"
+    android:orientation="horizontal" >
+
+    <LinearLayout
+        android:id="@+id/layout_displayhelper"
+        android:layout_width="0dp"
+        android:layout_height="fill_parent"
+        android:layout_margin="4dp"
+        android:layout_weight="1"
+        android:baselineAligned="false"
+        android:orientation="vertical" >
+
+<LinearLayout
+    android:id="@+id/layout_display"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:baselineAligned="false"
+    android:orientation="horizontal" >
+
+        <LinearLayout
+            android:id="@+id/layout_takte"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical" >
+
+            <TextView
+                android:id="@+id/textView_takte"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom"
+                android:layout_margin="4dp"
+                android:gravity="bottom|left"
+                android:minHeight="40dp"
+                android:text="@string/label_takte"
+                android:textSize="22sp" />
+
+            <LinearLayout
+                android:id="@+id/layout_tpm"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content" >
+
+                <EditText
+                    android:id="@+id/text_tpm"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="4dp"
+                    android:layout_weight="1"
+                    android:inputType="number|numberDecimal"
+                    android:minHeight="40dp"
+                    android:textSize="22sp" >
+
+                    <requestFocus />
+                </EditText>
+
+                <TextView
+                    android:id="@+id/label_tpm"
+                    android:layout_width="wrap_content"
+                    android:layout_height="40dp"
+                    android:layout_margin="4dp"
+                    android:gravity="left|center_vertical"
+                    android:text="@string/label_tpm"
+                    android:textSize="18sp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/layout_td"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content" >
+
+                <EditText
+                    android:id="@+id/text_td"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="4dp"
+                    android:layout_weight="1"
+                    android:inputType="number|numberDecimal"
+                    android:minHeight="40dp"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:id="@+id/label_td"
+                    android:layout_width="wrap_content"
+                    android:layout_height="40dp"
+                    android:layout_margin="4dp"
+                    android:gravity="left|center_vertical"
+                    android:text="@string/label_td"
+                    android:textSize="18sp" />
+
+            </LinearLayout>
+
+            <Spinner
+                android:id="@+id/spinner_taktart"
+                android:layout_width="fill_parent"
+                android:layout_height="40dp"
+                android:layout_margin="4dp"
+                android:entries="@array/string_takte"
+                android:prompt="@string/promt_takte" >
+
+            </Spinner>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/layout_beats"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical" >
+
+            <TextView
+                android:id="@+id/textView_beats"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom|left"
+                android:layout_margin="4dp"
+                android:gravity="bottom|left"
+                android:minHeight="40dp"
+                android:text="@string/label_beats"
+                android:textSize="22sp" />
+
+            <LinearLayout
+                android:id="@+id/layout_bpm"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:minHeight="48dp" >
+
+                <EditText
+                    android:id="@+id/text_bpm"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="4dp"
+                    android:layout_weight="1"
+                    android:inputType="number|numberDecimal"
+                    android:minHeight="40dp"
+                    android:textSize="22sp" />
+
+                <TextView
+                    android:id="@+id/label_bpm"
+                    android:layout_width="wrap_content"
+                    android:layout_height="40dp"
+                    android:layout_margin="4dp"
+                    android:gravity="left|center_vertical"
+                    android:minHeight="40dp"
+                    android:text="@string/label_bpm"
+                    android:textSize="18sp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/layout_bd"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content" >
+
+                <EditText
+                    android:id="@+id/text_bd"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="4dp"
+                    android:layout_weight="1"
+                    android:inputType="number|numberDecimal"
+                    android:minHeight="40dp"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:id="@+id/label_bd"
+                    android:layout_width="wrap_content"
+                    android:layout_height="40dp"
+                    android:layout_margin="4dp"
+                    android:gravity="left|center_vertical"
+                    android:text="@string/label_bd"
+                    android:textSize="18sp" />
+
+            </LinearLayout>
+
+            <Spinner
+                android:id="@+id/spinner_tapart"
+                android:layout_width="fill_parent"
+                android:layout_height="40dp"
+                android:layout_margin="4dp"
+                android:entries="@array/string_taps"
+                android:prompt="@string/promt_taps" />
+
+        </LinearLayout>
+    </LinearLayout>
+
+        <Button
+            android:id="@+id/button_reset"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:minHeight="40dp"
+            android:text="@string/button_reset"
+            android:textSize="18sp" />
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/button_tap"
+        android:layout_width="0dp"
+        android:layout_height="fill_parent"
+        android:layout_margin="4dp"
+        android:layout_weight="1"
+        android:text="@string/button_tap"
+        android:textSize="75sp" />
+
+</LinearLayout>
