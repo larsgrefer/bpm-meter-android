@@ -1,16 +1,17 @@
 package com.larsgrefer.bpmMeter;
 
-import android.content.Intent;
+import android.annotation.SuppressLint;
 import android.content.SharedPreferences;
-import android.os.*;
+import android.os.Build;
+import android.os.Bundle;
 import android.preference.PreferenceActivity;
 import android.preference.PreferenceManager;
-import android.view.*;
-import android.widget.*;
+import android.view.MenuItem;
 
 public class settingsActivity extends PreferenceActivity 
 {
-    @SuppressWarnings( "deprecation" )
+    @SuppressLint("NewApi")
+	@SuppressWarnings( "deprecation" )
 	@Override
     public void onCreate(Bundle savedInstanceState) 
     {
