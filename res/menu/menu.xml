@@ -1,21 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
-<menu xmlns:android="http://schemas.android.com/apk/res/android" >
+<menu 
+    xmlns:yourapp="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android" >
     <item
         android:id="@+id/menu_reset"
         android:title="@string/button_reset"
         android:icon="@android:drawable/ic_menu_close_clear_cancel"
-        android:showAsAction="always|withText"
+        yourapp:showAsAction="always|withText"
         />
     <item
         android:id="@+id/menu_settings"
         android:title="@string/settings_title"
         android:icon="@android:drawable/ic_menu_preferences"
-        android:showAsAction="ifRoom"
+        yourapp:showAsAction="ifRoom"
         />
     <item
         android:id="@+id/menu_about"
         android:title="@string/menu_about"
         android:icon="@android:drawable/ic_menu_info_details"
-        android:showAsAction="ifRoom"
+        yourapp:showAsAction="ifRoom"
     	/>
 </menu>

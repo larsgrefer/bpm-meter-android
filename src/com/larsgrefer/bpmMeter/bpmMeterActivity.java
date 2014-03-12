@@ -1,20 +1,34 @@
 package com.larsgrefer.bpmMeter;
 
-import java.text.*;
+import java.text.DecimalFormat;
+import java.text.ParseException;
 
-import android.app.*;
-import android.content.*;
+import android.app.AlertDialog;
+import android.content.DialogInterface;
+import android.content.Intent;
+import android.content.SharedPreferences;
 import android.content.res.Configuration;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
-import android.widget.*;
+import android.support.v7.app.ActionBarActivity;
+import android.view.KeyEvent;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
+import android.view.View;
+import android.view.View.OnClickListener;
+import android.view.View.OnLongClickListener;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.Spinner;
+import android.widget.TextView;
 import android.widget.TextView.OnEditorActionListener;
-import android.view.*;
-import android.view.View.*;
 
-public class bpmMeterActivity extends Activity implements DialogInterface.OnClickListener, OnClickListener, OnEditorActionListener, OnLongClickListener
+
+
+public class bpmMeterActivity extends ActionBarActivity implements DialogInterface.OnClickListener, OnClickListener, OnEditorActionListener, OnLongClickListener
 {
     bpmMeter b;
 	
@@ -26,41 +40,24 @@ public class bpmMeterActivity extends Activity implements DialogInterface.OnClic
         PreferenceManager.setDefaultValues(this, R.xml.settings, false);
         
         SharedPreferences sp = PreferenceManager.getDefaultSharedPreferences(this);
-        if( Build.VERSION.SDK_INT >= 11)
-        {
+        
         	switch( Integer.parseInt( sp.getString( "design", "0" )))
         	{
         		case 1:
-        			this.setTheme( android.R.style.Theme_Holo );
+        			this.setTheme( android.support.v7.appcompat.R.style.Theme_AppCompat );
         			break;
         		case 2:
-        			this.setTheme( android.R.style.Theme_Holo_Light_DarkActionBar );
+        			this.setTheme( android.support.v7.appcompat.R.style.Theme_AppCompat_Light_DarkActionBar );
         			break;
         		case 3:
-        			this.setTheme( android.R.style.Theme_Holo_Light );
+        			this.setTheme( android.support.v7.appcompat.R.style.Theme_AppCompat_Light );
         			break;
         		case 0:
         		default:
+        			this.setTheme( android.support.v7.appcompat.R.style.Theme_AppCompat );
         			break;
         	}
-        }
-        else
-        {
-        	switch( Integer.parseInt( sp.getString( "design", "0" )))
-        	{
-        		case 1:
-        			this.setTheme( android.R.style.Theme_Black );
-        			break;
-        		case 2:
-        			break;
-        		case 3:
-        			this.setTheme( android.R.style.Theme_Light );
-        			break;
-        		case 0:
-        		default:
-        			break;
-        	}
-        }
+        
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main);
         
@@ -82,7 +79,7 @@ public class bpmMeterActivity extends Activity implements DialogInterface.OnClic
     {
         MenuInflater inflater = getMenuInflater();
         inflater.inflate(R.menu.menu, menu);
-        return true;
+        return super.onCreateOptionsMenu(menu);
     }
     
     @Override
