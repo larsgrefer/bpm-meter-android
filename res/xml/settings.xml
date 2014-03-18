@@ -15,9 +15,7 @@
             android:summary="@string/settings_longPressReset_summary"
             android:title="@string/settings_longPressReset_title" />
     </PreferenceCategory>
-    <PreferenceCategory
-        android:icon="@android:drawable/ic_menu_gallery"
-        android:title="@string/settings_category_Appereance" >
+    <PreferenceCategory android:title="@string/settings_category_Appereance" >
         <ListPreference
             android:dialogIcon="@android:drawable/ic_menu_gallery"
             android:dialogTitle="@string/settings_design_dialogTitle"
