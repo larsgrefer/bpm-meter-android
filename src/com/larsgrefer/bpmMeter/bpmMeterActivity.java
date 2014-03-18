@@ -4,9 +4,11 @@ import java.text.DecimalFormat;
 import java.text.ParseException;
 
 import android.app.AlertDialog;
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.content.pm.PackageManager.NameNotFoundException;
 import android.content.res.Configuration;
 import android.net.Uri;
 import android.os.Bundle;
@@ -217,9 +219,7 @@ public class bpmMeterActivity extends ActionBarActivity implements
 
 	public void onClick(DialogInterface dialog, int which) {
 		if (which == AlertDialog.BUTTON_POSITIVE) {
-			Uri webpage = Uri.parse("http://www.facebook.com/bpmMeter");
-			Intent webIntent = new Intent(Intent.ACTION_VIEW, webpage);
-			startActivity(webIntent);
+			startActivity(getOpenFacebookIntent(getApplicationContext()));
 		}
 	}
 
@@ -232,5 +232,16 @@ public class bpmMeterActivity extends ActionBarActivity implements
 			return true;
 		}
 		return false;
+	}
+
+	public static Intent getOpenFacebookIntent(Context c) {
+		try {
+			c.getPackageManager().getPackageInfo("com.facebook.katana", 0);
+			return new Intent(Intent.ACTION_VIEW,
+					Uri.parse("fb://profile/213518895431506"));
+		} catch (NameNotFoundException e) {
+			return new Intent(Intent.ACTION_VIEW,
+					Uri.parse("https://www.facebook.com/bpmMeter"));
+		}
 	}
 }
