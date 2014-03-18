@@ -36,9 +36,9 @@
     
     <string name="settings_title">Einstellungen</string>
     <string name="settings_showResetInLandscape_title">Zusätzlicher "Zurücksetzen"-Button im Querformat</string>
-    <string name="settings_showResetInLandscape_summary">Um einen zusätzlichen "Zurücksetzen"-Button im Querformat auf nach-Gingerbread Geräten (Version 3.x oder höher) anzuzeigen, aktivieren sie diese Option</string>
+    <string name="settings_showResetInLandscape_summary">Zeigt einen zusätzlichen Zurücksetzen-Button im Querformat an</string>
 	<string name="settings_longPressReset_title">LongPress Reset</string>
-	<string name="settings_longPressReset_summary">Den "TAP"-Button gedrückt zu halten, wird die gemessenen Daten zurücksetzen, wenn diese Option aktiviert ist</string>
+	<string name="settings_longPressReset_summary">Daten durch gedrückt halten des "TAP"-Buttons zurücksetzen.</string>
 
 	<string-array name="settings_design_entries">
 	    <item >Standard</item>

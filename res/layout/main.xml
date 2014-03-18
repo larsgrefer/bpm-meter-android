@@ -4,7 +4,7 @@
     android:layout_height="fill_parent"
     android:gravity="fill"
     android:orientation="vertical" >
-
+
     <LinearLayout
         android:id="@+id/layout_display"
         android:layout_width="fill_parent"
@@ -45,8 +45,6 @@
                     android:inputType="numberDecimal"
                     android:minHeight="40dp"
                     android:textSize="22sp" >
-
-                    <requestFocus />
                 </EditText>
 
                 <TextView
@@ -57,7 +55,6 @@
                     android:gravity="left|center_vertical"
                     android:text="@string/label_tpm"
                     android:textSize="18sp" />
-
             </LinearLayout>
 
             <LinearLayout
@@ -83,7 +80,6 @@
                     android:gravity="left|center_vertical"
                     android:text="@string/label_td"
                     android:textSize="18sp" />
-
             </LinearLayout>
 
             <Spinner
@@ -93,7 +89,6 @@
                 android:layout_margin="4dp"
                 android:entries="@array/string_takte"
                 android:prompt="@string/promt_takte" >
-
             </Spinner>
         </LinearLayout>
 
@@ -140,7 +135,6 @@
                     android:minHeight="40dp"
                     android:text="@string/label_bpm"
                     android:textSize="18sp" />
-
             </LinearLayout>
 
             <LinearLayout
@@ -166,7 +160,6 @@
                     android:gravity="left|center_vertical"
                     android:text="@string/label_bd"
                     android:textSize="18sp" />
-
             </LinearLayout>
 
             <Spinner
@@ -176,10 +169,9 @@
                 android:layout_margin="4dp"
                 android:entries="@array/string_taps"
                 android:prompt="@string/promt_taps" />
-
         </LinearLayout>
     </LinearLayout>
-
+
     <Button
         android:id="@+id/button_tap"
         android:layout_width="fill_parent"
@@ -188,8 +180,11 @@
         android:layout_weight="75"
         android:text="@string/button_tap"
         android:textSize="75sp"
-        android:typeface="normal" />
-
+        android:typeface="normal" >
+
+        <requestFocus />
+    </Button>
+
     <Button
         android:id="@+id/button_reset"
         android:layout_width="fill_parent"
@@ -198,6 +193,7 @@
         android:layout_weight="10"
         android:minHeight="40dp"
         android:text="@string/button_reset"
-        android:textSize="18sp" />
+        android:textSize="18sp"
+        android:visibility="gone" />
 
 </LinearLayout>
