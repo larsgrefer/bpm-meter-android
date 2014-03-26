@@ -22,6 +22,7 @@
     <style name="bpmMeter.Light" parent="Theme.AppCompat.Light">
         <item name="ic_action_settings">@drawable/ic_action_settings_light</item>
         <item name="ic_action_about">@drawable/ic_action_about_light</item>
+        <item name="ic_action_facebook">@drawable/ic_action_facebook_light</item>
         <item name="ic_action_backspace">@drawable/ic_action_backspace_light</item>
     </style>
     
