@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <attr name="ic_action_facebook" format="reference"/>
+    <attr name="ic_action_settings" format="reference"/>
+    <attr name="ic_action_about" format="reference"/>
+    <attr name="ic_action_backspace" format="reference"/>
+    
+    <style name="bpmMeter.Dark" parent="Theme.AppCompat">
+        <item name="ic_action_settings">@drawable/ic_action_settings_dark</item>
+        <item name="ic_action_about">@drawable/ic_action_about_dark</item>
+        <item name="ic_action_facebook">@drawable/ic_action_facebook_dark</item>
+        <item name="ic_action_backspace">@drawable/ic_action_backspace_dark</item>
+    </style>
+    
+    <style name="bpmMeter.Light.DarkActionBar" parent="Theme.AppCompat.Light.DarkActionBar">
+        <item name="ic_action_settings">@drawable/ic_action_settings_dark</item>
+        <item name="ic_action_about">@drawable/ic_action_about_dark</item>
+        <item name="ic_action_facebook">@drawable/ic_action_facebook_dark</item>
+        <item name="ic_action_backspace">@drawable/ic_action_backspace_dark</item>
+    </style>
+    
+    <style name="bpmMeter.Light" parent="Theme.AppCompat.Light">
+        <item name="ic_action_settings">@drawable/ic_action_settings_light</item>
+        <item name="ic_action_about">@drawable/ic_action_about_light</item>
+        <item name="ic_action_backspace">@drawable/ic_action_backspace_light</item>
+    </style>
+    
+</resources>

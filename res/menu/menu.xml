@@ -5,19 +5,25 @@
     <item
         android:id="@+id/menu_reset"
         android:title="@string/button_reset"
-        android:icon="@android:drawable/ic_menu_close_clear_cancel"
+        android:icon="?attr/ic_action_backspace"
         yourapp:showAsAction="always|withText"
         />
     <item
         android:id="@+id/menu_settings"
         android:title="@string/settings_title"
-        android:icon="@android:drawable/ic_menu_preferences"
+        android:icon="?attr/ic_action_settings"
         yourapp:showAsAction="ifRoom"
         />
     <item
+        android:id="@+id/menu_facebook"
+        android:title="@string/menu_facebook"
+        android:icon="?attr/ic_action_facebook"
+        yourapp:showAsAction="ifRoom"
+    	/>
+    <item
         android:id="@+id/menu_about"
         android:title="@string/menu_about"
-        android:icon="@android:drawable/ic_menu_info_details"
+        android:icon="?attr/ic_action_about"
         yourapp:showAsAction="ifRoom"
     	/>
 </menu>

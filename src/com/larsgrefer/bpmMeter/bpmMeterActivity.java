@@ -43,17 +43,17 @@ public class bpmMeterActivity extends ActionBarActivity implements
 
 		switch (Integer.parseInt(sp.getString("design", "0"))) {
 		case 1:
-			this.setTheme(android.support.v7.appcompat.R.style.Theme_AppCompat);
+			this.setTheme(R.style.bpmMeter_Dark);
 			break;
 		case 2:
-			this.setTheme(android.support.v7.appcompat.R.style.Theme_AppCompat_Light_DarkActionBar);
+			this.setTheme(R.style.bpmMeter_Light_DarkActionBar);
 			break;
 		case 3:
-			this.setTheme(android.support.v7.appcompat.R.style.Theme_AppCompat_Light);
+			this.setTheme(R.style.bpmMeter_Light);
 			break;
 		case 0:
 		default:
-			this.setTheme(android.support.v7.appcompat.R.style.Theme_AppCompat);
+			this.setTheme(R.style.bpmMeter_Dark);
 			break;
 		}
 
