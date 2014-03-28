@@ -42,16 +42,15 @@ public class bpmMeterActivity extends ActionBarActivity implements
 				.getDefaultSharedPreferences(this);
 
 		switch (Integer.parseInt(sp.getString("design", "0"))) {
-		case 1:
+		case 0:
 			this.setTheme(R.style.bpmMeter_Dark);
 			break;
-		case 2:
+		case 1:
 			this.setTheme(R.style.bpmMeter_Light_DarkActionBar);
 			break;
-		case 3:
+		case 2:
 			this.setTheme(R.style.bpmMeter_Light);
 			break;
-		case 0:
 		default:
 			this.setTheme(R.style.bpmMeter_Dark);
 			break;

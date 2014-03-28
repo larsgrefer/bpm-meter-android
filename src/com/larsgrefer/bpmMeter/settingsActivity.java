@@ -8,41 +8,27 @@ import android.preference.PreferenceActivity;
 import android.preference.PreferenceManager;
 import android.view.MenuItem;
 
+@SuppressLint("NewApi")
 public class settingsActivity extends PreferenceActivity {
-	@SuppressLint("NewApi")
-	@SuppressWarnings("deprecation")
+
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		SharedPreferences sp = PreferenceManager
 				.getDefaultSharedPreferences(this);
-		if (Build.VERSION.SDK_INT >= 11) {
-			switch (Integer.parseInt(sp.getString("design", "0"))) {
-			
-			case 2:
-				this.setTheme(android.support.v7.appcompat.R.style.Theme_AppCompat_Light_DarkActionBar);
-				break;
-			case 3:
-				this.setTheme(android.support.v7.appcompat.R.style.Theme_AppCompat_Light);
-				break;
-			case 0:
-			case 1:
-			default:
-				this.setTheme(android.support.v7.appcompat.R.style.Theme_AppCompat);
-				break;
-			}
-		} else {
-			switch (Integer.parseInt(sp.getString("design", "0"))) {
 
-			case 2:
-			case 3:
-				this.setTheme(android.R.style.Theme_Light);
-				break;
-			case 0:
-			case 1:
-			default:
-				this.setTheme(android.R.style.Theme_Black);
-				break;
-			}
+		switch (Integer.parseInt(sp.getString("design", "0"))) {
+		case 0:
+			this.setTheme(R.style.bpmMeter_Dark);
+			break;
+		case 1:
+			this.setTheme(R.style.bpmMeter_Light_DarkActionBar);
+			break;
+		case 2:
+			this.setTheme(R.style.bpmMeter_Light);
+			break;
+		default:
+			this.setTheme(R.style.bpmMeter_Dark);
+			break;
 		}
 		super.onCreate(savedInstanceState);
 		addPreferencesFromResource(R.xml.settings);

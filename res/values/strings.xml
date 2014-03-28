@@ -46,7 +46,6 @@
 	<string name="settings_longPressReset_summary">Long-pressing the "TAP"-Button will reset the measured data, if this option is checked</string>
 	
 	<string-array name="settings_design_entries">
-	    <item >Default</item>
 		<item >Holo Dark</item>
 		<item >Holo Light with dark ActionBar</item>
 		<item >Holo Light</item>   
@@ -56,7 +55,6 @@
 	    <item >0</item>
 		<item >1</item>
 		<item >2</item>
-		<item >3</item>
 	</string-array>
 	
 	<string name="settings_design_title">Design</string>
