@@ -17,11 +17,11 @@
     </PreferenceCategory>
     <PreferenceCategory android:title="@string/settings_category_Appereance" >
         <ListPreference
-            android:dialogIcon="@android:drawable/ic_menu_gallery"
+            android:dialogIcon="?attr/ic_dialog_design"
             android:dialogTitle="@string/settings_design_dialogTitle"
             android:entries="@array/settings_design_entries"
             android:entryValues="@array/settings_design_values"
-            android:icon="@android:drawable/ic_menu_gallery"
+            android:icon="?attr/ic_settings_design"
             android:key="design"
             android:summary="@string/settings_design_summary"
             android:title="@string/settings_design_title" />

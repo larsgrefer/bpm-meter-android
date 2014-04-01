@@ -14,6 +14,7 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.support.v7.app.ActionBarActivity;
+import android.util.TypedValue;
 import android.view.KeyEvent;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -90,18 +91,24 @@ public class bpmMeterActivity extends ActionBarActivity implements
 			this.update();
 			return true;
 		case R.id.menu_about:
+			TypedValue aboutIcon = new TypedValue();
+			getTheme().resolveAttribute(R.attr.ic_dialog_about, aboutIcon, true);
 			AlertDialog.Builder builder = new AlertDialog.Builder(this);
 			builder.setNeutralButton("OK", null)
 					.setPositiveButton(R.string.about_facebook, this)
 					.setMessage(R.string.about_message)
 					.setTitle(R.string.about_title)
-					.setIcon(android.R.drawable.ic_dialog_info);
+					.setIcon(aboutIcon.resourceId);
 			builder.create().show();
-			return false;
+			return true;
 		case R.id.menu_settings:
 			Intent i = new Intent(this.getApplicationContext(),
 					settingsActivity.class);
 			startActivity(i);
+			return true;
+		case R.id.menu_facebook:
+			startActivity(getOpenFacebookIntent(getApplicationContext()));
+			return true;
 		default:
 			return super.onOptionsItemSelected(item);
 		}
