@@ -12,7 +12,7 @@
         android:allowBackup="true"
         android:enabled="true"
         android:icon="@drawable/icon"
-        android:label="@string/app_name" >
+        android:label="@string/app_name" android:theme="@style/bpmMeter.Dark">
         <activity
             android:name="com.larsgrefer.bpmMeter.bpmMeterActivity"
             android:label="@string/app_name"

@@ -38,7 +38,7 @@
     <string name="settings_title">Settings</string>
     
     <string name="settings_category_AppFunctions">App Functions</string>
-    <string name="settings_category_Appereance">Appereance</string>
+    <string name="settings_category_Appereance">Appearance</string>
     
     <string name="settings_showResetInLandscape_title">Additional "Reset"-Button in landscape orientation</string>
     <string name="settings_showResetInLandscape_summary">To show an additional "Reset"-Button in landscape orientation on past-Gingerbread devices (Version 3.x or newer), check this</string>
