@@ -59,6 +59,5 @@
 	
 	<string name="settings_design_title">Design</string>
 	<string name="settings_design_dialogTitle">Choose a Design:</string>
-	<string name="settings_design_summary">May not work on every platform</string>
     
 </resources>

@@ -23,7 +23,6 @@
             android:entryValues="@array/settings_design_values"
             android:icon="?attr/ic_settings_design"
             android:key="design"
-            android:summary="@string/settings_design_summary"
             android:title="@string/settings_design_title" />
     </PreferenceCategory>
 
