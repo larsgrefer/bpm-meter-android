@@ -2,17 +2,20 @@ package com.larsgrefer.bpmMeter;
 
 import java.text.DecimalFormat;
 import java.text.ParseException;
-
+import android.annotation.TargetApi;
 import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.content.SharedPreferences.OnSharedPreferenceChangeListener;
 import android.content.pm.PackageManager.NameNotFoundException;
 import android.content.res.Configuration;
 import android.net.Uri;
+import android.os.Build;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
+import android.provider.Settings.System;
 import android.support.v7.app.ActionBarActivity;
 import android.util.TypedValue;
 import android.view.KeyEvent;
@@ -30,7 +33,7 @@ import android.widget.TextView.OnEditorActionListener;
 
 public class bpmMeterActivity extends ActionBarActivity implements
 		DialogInterface.OnClickListener, OnClickListener,
-		OnEditorActionListener, OnLongClickListener {
+		OnEditorActionListener, OnLongClickListener, OnSharedPreferenceChangeListener {
 	bpmMeter b;
 
 	/** Called when the activity is first created. */
@@ -41,21 +44,8 @@ public class bpmMeterActivity extends ActionBarActivity implements
 
 		SharedPreferences sp = PreferenceManager
 				.getDefaultSharedPreferences(this);
-
-		switch (Integer.parseInt(sp.getString("design", "0"))) {
-		case 0:
-			this.setTheme(R.style.bpmMeter_Dark);
-			break;
-		case 1:
-			this.setTheme(R.style.bpmMeter_Light_DarkActionBar);
-			break;
-		case 2:
-			this.setTheme(R.style.bpmMeter_Light);
-			break;
-		default:
-			this.setTheme(R.style.bpmMeter_Dark);
-			break;
-		}
+		sp.registerOnSharedPreferenceChangeListener(this);
+		setTheme(sp);
 
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.main);
@@ -74,6 +64,7 @@ public class bpmMeterActivity extends ActionBarActivity implements
 
 		updateLayout();
 	}
+
 
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
@@ -248,6 +239,39 @@ public class bpmMeterActivity extends ActionBarActivity implements
 		} catch (NameNotFoundException e) {
 			return new Intent(Intent.ACTION_VIEW,
 					Uri.parse("https://www.facebook.com/bpmMeter"));
+		}
+	}
+
+	@TargetApi(Build.VERSION_CODES.HONEYCOMB)
+	public void onSharedPreferenceChanged(SharedPreferences sp,
+			String key) {
+		if(key.equals("design")){
+			if(Build.VERSION.SDK_INT >= 11)
+			{
+				this.recreate();
+			}
+		}
+	}
+	
+	private void setTheme(SharedPreferences sp)
+	{
+		switch (Integer.parseInt(sp.getString("design", "0"))) {
+		case 0:
+			this.setTheme(R.style.bpmMeter_Dark);
+			getApplication().setTheme(R.style.bpmMeter_Dark);
+			break;
+		case 1:
+			this.setTheme(R.style.bpmMeter_Light_DarkActionBar);
+			getApplication().setTheme(R.style.bpmMeter_Light_DarkActionBar);
+			break;
+		case 2:
+			this.setTheme(R.style.bpmMeter_Light);
+			getApplication().setTheme(R.style.bpmMeter_Light);
+			break;
+		default:
+			this.setTheme(R.style.bpmMeter_Dark);
+			getApplication().setTheme(R.style.bpmMeter_Dark);
+			break;
 		}
 	}
 }
