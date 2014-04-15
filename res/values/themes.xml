@@ -1,16 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources>
-    <attr name="ic_action_facebook" format="reference"/>
-    <attr name="ic_action_settings" format="reference"/>
-    <attr name="ic_action_about" format="reference"/>
-    <attr name="ic_action_backspace" format="reference"/>
-    
-    <attr name="ic_settings_design" format="reference"/>
-    
-    <attr name="ic_dialog_about" format="reference"/>
-    <attr name="ic_dialog_design" format="reference"/>
+<resources xmlns:android="http://schemas.android.com/apk/res/android">
     
     <style name="bpmMeter.Dark" parent="Theme.AppCompat">
+        <item name="actionBarStyle">@style/Widget.AppCompat.ActionBar.Solid</item>
+        
         <item name="ic_action_settings">@drawable/ic_action_settings_dark</item>
         <item name="ic_action_about">@drawable/ic_action_about_dark</item>
         <item name="ic_action_facebook">@drawable/ic_action_facebook_dark</item>
@@ -35,6 +28,8 @@
     </style>
     
     <style name="bpmMeter.Light" parent="Theme.AppCompat.Light">
+        <item name="actionBarStyle">@style/Widget.AppCompat.Light.ActionBar.Solid</item>
+        
         <item name="ic_action_settings">@drawable/ic_action_settings_light</item>
         <item name="ic_action_about">@drawable/ic_action_about_light</item>
         <item name="ic_action_facebook">@drawable/ic_action_facebook_light</item>
