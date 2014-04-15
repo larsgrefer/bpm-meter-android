@@ -2,6 +2,7 @@ package com.larsgrefer.bpmMeter;
 
 import java.text.DecimalFormat;
 import java.text.ParseException;
+
 import android.annotation.TargetApi;
 import android.app.AlertDialog;
 import android.content.Context;
@@ -15,7 +16,6 @@ import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
-import android.provider.Settings.System;
 import android.support.v7.app.ActionBarActivity;
 import android.util.TypedValue;
 import android.view.KeyEvent;

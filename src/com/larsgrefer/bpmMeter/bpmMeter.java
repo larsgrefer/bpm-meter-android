@@ -10,6 +10,7 @@ public class bpmMeter
 	private double taps = 0;
 	
 	public double bpm, tpm, bd, td;
+	
 	public bpmMeter()
 	{
 		taktart = 4;
