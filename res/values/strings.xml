@@ -59,5 +59,6 @@
 	
 	<string name="settings_design_title">Design</string>
 	<string name="settings_design_dialogTitle">Choose a Design:</string>
+	<string name="settings_design_hint">Sie müssen die App eventuell neu starten um die Änderungen zu sehen</string>
     
 </resources>
