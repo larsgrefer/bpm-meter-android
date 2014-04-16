@@ -70,6 +70,10 @@ public class bpmMeterActivity extends ActionBarActivity implements
 	public boolean onCreateOptionsMenu(Menu menu) {
 		MenuInflater inflater = getMenuInflater();
 		inflater.inflate(R.menu.menu, menu);
+		
+		menu.findItem(R.id.menu_facebook).setIntent(getOpenFacebookIntent(getApplicationContext()));
+		menu.findItem(R.id.menu_settings).setIntent(new Intent(getApplicationContext(), settingsActivity.class));
+		
 		return super.onCreateOptionsMenu(menu);
 	}
 
@@ -91,14 +95,6 @@ public class bpmMeterActivity extends ActionBarActivity implements
 					.setTitle(R.string.about_title)
 					.setIcon(aboutIcon.resourceId);
 			builder.create().show();
-			return true;
-		case R.id.menu_settings:
-			Intent i = new Intent(this.getApplicationContext(),
-					settingsActivity.class);
-			startActivity(i);
-			return true;
-		case R.id.menu_facebook:
-			startActivity(getOpenFacebookIntent(getApplicationContext()));
 			return true;
 		default:
 			return super.onOptionsItemSelected(item);
