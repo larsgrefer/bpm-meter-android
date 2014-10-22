@@ -1,48 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources xmlns:android="http://schemas.android.com/apk/res/android">
-    
-    <style name="Theme.bpmMeter.Base.Dark" parent="Theme.AppCompat">
-        <item name="actionBarStyle">@style/Widget.bpmMeter.ActionBar.Dark</item>
-    </style>
-    <style name="Theme.bpmMeter.Base.Light" parent="Theme.AppCompat.Light">
-        <item name="actionBarStyle">@style/Widget.bpmMeter.ActionBar.Light</item>
-    </style>
-    
-    <style name="bpmMeter.Dark" parent="Theme.bpmMeter.Base.Dark">
-        <item name="ic_action_settings">@drawable/ic_action_settings_dark</item>
+<resources>
+
+    <style name="Theme.BpmMeter" parent="Theme.AppCompat.NoActionBar">
         <item name="ic_action_about">@drawable/ic_action_about_dark</item>
         <item name="ic_action_facebook">@drawable/ic_action_facebook_dark</item>
         <item name="ic_action_backspace">@drawable/ic_action_backspace_dark</item>
-        
-        <item name="ic_settings_design">@drawable/ic_settings_design_dark</item>
-        
+
         <item name="ic_dialog_about">@drawable/ic_dialog_about_dark</item>
-        <item name="ic_dialog_design">@drawable/ic_dialog_design_dark</item>
     </style>
-    
-    <style name="bpmMeter.Light.DarkActionBar" parent="Theme.AppCompat.Light.DarkActionBar">
-        <item name="ic_action_settings">@drawable/ic_action_settings_dark</item>
-        <item name="ic_action_about">@drawable/ic_action_about_dark</item>
-        <item name="ic_action_facebook">@drawable/ic_action_facebook_dark</item>
-        <item name="ic_action_backspace">@drawable/ic_action_backspace_dark</item>
-        
-        <item name="ic_settings_design">@drawable/ic_settings_design_light</item>
-        
-        <item name="ic_dialog_about">@drawable/ic_dialog_about_light</item>
-        <item name="ic_dialog_design">@drawable/ic_dialog_design_light</item>
-    </style>
-    
-    <style name="bpmMeter.Light" parent="Theme.bpmMeter.Base.Light">
-        
-        <item name="ic_action_settings">@drawable/ic_action_settings_light</item>
-        <item name="ic_action_about">@drawable/ic_action_about_light</item>
-        <item name="ic_action_facebook">@drawable/ic_action_facebook_light</item>
-        <item name="ic_action_backspace">@drawable/ic_action_backspace_light</item>
-        
-        <item name="ic_settings_design">@drawable/ic_settings_design_light</item>
-        
-        <item name="ic_dialog_about">@drawable/ic_dialog_about_light</item>
-        <item name="ic_dialog_design">@drawable/ic_dialog_design_light</item>
-    </style>
-    
 </resources>

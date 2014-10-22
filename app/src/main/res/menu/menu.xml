@@ -1,28 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
-<menu 
-    xmlns:yourapp="http://schemas.android.com/apk/res-auto"
-    xmlns:android="http://schemas.android.com/apk/res/android" >
+<menu
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
     <item
         android:id="@+id/menu_reset"
-        android:title="@string/button_reset"     
-        yourapp:showAsAction="always|withText"
+        android:title="@string/button_reset"
+        app:showAsAction="always|withText"
         />
     <item
         android:id="@+id/menu_facebook"
-        android:title="@string/menu_facebook"
         android:icon="?attr/ic_action_facebook"
-        yourapp:showAsAction="ifRoom"
-    	/>
+        android:title="@string/menu_facebook"
+        app:showAsAction="ifRoom"
+        />
     <item
         android:id="@+id/menu_about"
-        android:title="@string/menu_about"
         android:icon="?attr/ic_action_about"
-        yourapp:showAsAction="ifRoom"
-    	/>
-    <item
-        android:id="@+id/menu_settings"
-        android:title="@string/settings_title"
-        android:icon="?attr/ic_action_settings"
-        yourapp:showAsAction="ifRoom"
+        android:title="@string/menu_about"
+        app:showAsAction="ifRoom"
         />
 </menu>

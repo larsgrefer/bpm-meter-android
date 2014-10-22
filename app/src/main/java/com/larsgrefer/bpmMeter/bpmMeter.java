@@ -1,6 +1,6 @@
 package com.larsgrefer.bpmMeter;
 
-public class bpmMeter 
+public class BpmMeter
 {
 	public byte taktart;
 	public boolean takte;
@@ -11,7 +11,7 @@ public class bpmMeter
 	
 	public double bpm, tpm, bd, td;
 	
-	public bpmMeter()
+	public BpmMeter()
 	{
 		taktart = 4;
 		takte = true;

@@ -3,13 +3,13 @@
     package="com.larsgrefer.bpmMeter">
 
     <application
-        android:theme="@style/bpmMeter.Dark"
+        android:theme="@style/Theme.BpmMeter"
         android:allowBackup="true"
         android:enabled="true"
         android:icon="@drawable/icon"
         android:label="@string/app_name" >
         <activity
-            android:name="com.larsgrefer.bpmMeter.bpmMeterActivity"
+            android:name=".BpmMeterActivity"
             android:label="@string/app_name"
             android:uiOptions="splitActionBarWhenNarrow" >
             <meta-data
@@ -21,10 +21,6 @@
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-        </activity>
-        <activity
-            android:name="com.larsgrefer.bpmMeter.settingsActivity"
-            android:label="@string/settings_title" >
         </activity>
     </application>
 
