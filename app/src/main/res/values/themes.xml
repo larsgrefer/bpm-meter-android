@@ -1,11 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <style name="Theme.BpmMeter" parent="Theme.AppCompat.NoActionBar">
-        <item name="ic_action_about">@drawable/ic_action_about_dark</item>
-        <item name="ic_action_facebook">@drawable/ic_action_facebook_dark</item>
-        <item name="ic_action_backspace">@drawable/ic_action_backspace_dark</item>
+    <style name="Theme.BpmMeter.Base" parent="Theme.AppCompat">
 
-        <item name="ic_dialog_about">@drawable/ic_dialog_about_dark</item>
+        <item name="colorPrimary">@color/material_indigo_500</item>
+        <item name="colorPrimaryDark">@color/material_indigo_700</item>
+        <item name="colorAccent">@color/material_light_blue_A200</item>
+
+        <item name="ic_action_about">@drawable/ic_info_white_24dp</item>
+        <item name="ic_action_github">@drawable/ic_action_github</item>
     </style>
+
+    <style name="Theme.BpmMeter" parent="Theme.BpmMeter.Base">
+        <item name="borderlessButtonStyle">@android:style/Widget.Button</item>
+    </style>
+
 </resources>

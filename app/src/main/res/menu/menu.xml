@@ -3,20 +3,21 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
     <item
-        android:id="@+id/menu_reset"
+        android:id="@+id/action_reset"
         android:title="@string/button_reset"
         app:showAsAction="always|withText"
         />
     <item
-        android:id="@+id/menu_facebook"
-        android:icon="?attr/ic_action_facebook"
-        android:title="@string/menu_facebook"
+        android:id="@+id/action_github"
+        android:icon="?attr/ic_action_github"
+        android:title="@string/action_github_long"
+        android:titleCondensed="@string/action_github"
         app:showAsAction="ifRoom"
         />
     <item
-        android:id="@+id/menu_about"
+        android:id="@+id/action_about"
         android:icon="?attr/ic_action_about"
-        android:title="@string/menu_about"
+        android:title="@string/action_about"
         app:showAsAction="ifRoom"
         />
 </menu>

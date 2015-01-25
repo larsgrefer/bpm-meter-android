@@ -3,10 +3,8 @@
 
     <string name="app_name">BPM-Meter</string>
     
-    <string name="label_takte">Maat</string>
+    <string name="label_measures">Maat</string>
     <string name="label_beats">Tellen</string>
-    
-    <string name="button_tap">TAP</string>
     <string name="button_reset">opnieuw zetten</string>
     
     <string name="promt_takte">maatsoorten</string>
@@ -15,10 +13,6 @@
         <item>Maaten</item>
         <item>Tellen</item>
     </string-array>
+    <string name="label_beat_duration">sec</string>
 
-    <string name="label_tpm">MpM</string>
-
-    <string name="label_bpm">BpM</string>
-
-    
 </resources>

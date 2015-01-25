@@ -2,17 +2,11 @@
 <resources>
     <string name="app_name">BPM-Meter</string>
     
-    <string name="label_takte">Takte</string>
+    <string name="label_measures">Takte</string>
     <string name="label_beats">Schläge</string>
-    
-    <string name="button_tap">TAP</string>
+
     <string name="button_reset">Zurücksetzen</string>
-    
-    <string-array name="string_takte">
-        <item >4/4</item>
-        <item >3/4</item>
-        <item >2/4</item>
-    </string-array>
+
     <string name="promt_takte">Wählen sie die Taktart</string>
     
     <string-array name="string_taps">
@@ -21,14 +15,13 @@
     </string-array>
     <string name="promt_taps">Was tippen sie?</string>
 
-    <string name="label_tpm">TpM</string>
-    <string name="label_td">sec</string>
-    <string name="label_bpm">BpM</string>
-    <string name="label_bd">sec</string>
+    <string name="label_measures_per_minute">TpM</string>
+    <string name="label_measure_duration">sec</string>
+    <string name="label_beats_per_minute">BpM</string>
+    <string name="label_beat_duration">sec</string>
     
     <string name="message_parseError">Fehler beim Lesen der Zahl</string>
-    <string name="button_parseError">OK</string>
     <string name="about_title">Über</string>
-    <string name="menu_about">Über</string>
-    <string name="about_message">© Lars Grefer</string>
+    <string name="action_about">Über</string>
+    <string name="action_github_long">Auf GitHub ansehen</string>
 </resources>

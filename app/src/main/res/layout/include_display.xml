@@ -1,86 +1,82 @@
 <?xml version="1.0" encoding="utf-8"?>
 
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:tools="http://schemas.android.com/tools"
               android:orientation="horizontal"
               android:layout_width="match_parent"
               android:layout_height="wrap_content"
-              android:baselineAligned="false">
+              android:baselineAligned="false"
+              tools:showIn="@layout/include_content">
 
     <LinearLayout
-        android:id="@+id/layout_takte"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_weight="1"
         android:orientation="vertical" >
 
         <TextView
-            android:id="@+id/textView_takte"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="bottom"
             android:layout_margin="4dp"
-            android:gravity="bottom|left"
+            android:gravity="bottom|start"
             android:minHeight="40dp"
-            android:text="@string/label_takte"
+            android:text="@string/label_measures"
             android:textSize="22sp" />
 
         <LinearLayout
-            android:id="@+id/layout_tpm"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content" >
 
             <EditText
-                android:id="@+id/text_tpm"
+                android:id="@+id/text_measures_per_minute"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_margin="4dp"
                 android:layout_weight="1"
                 android:inputType="numberDecimal"
-                android:minHeight="40dp"
-                android:textSize="22sp" >
+                android:textSize="22sp"
+                android:imeOptions="actionGo">
             </EditText>
 
             <TextView
-                android:id="@+id/label_tpm"
                 android:layout_width="wrap_content"
                 android:layout_height="40dp"
                 android:layout_margin="4dp"
-                android:gravity="left|center_vertical"
-                android:text="@string/label_tpm"
+                android:gravity="start|center_vertical"
+                android:text="@string/label_measures_per_minute"
                 android:textSize="18sp" />
         </LinearLayout>
 
         <LinearLayout
-            android:id="@+id/layout_td"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content" >
 
             <EditText
-                android:id="@+id/text_td"
+                android:id="@+id/text_measure_duration"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_margin="4dp"
                 android:layout_weight="1"
                 android:inputType="numberDecimal"
                 android:minHeight="40dp"
-                android:textSize="18sp" />
+                android:textSize="18sp"
+                android:imeOptions="actionGo"/>
 
             <TextView
-                android:id="@+id/label_td"
                 android:layout_width="wrap_content"
                 android:layout_height="40dp"
                 android:layout_margin="4dp"
-                android:gravity="left|center_vertical"
-                android:text="@string/label_td"
+                android:gravity="start|center_vertical"
+                android:text="@string/label_measure_duration"
                 android:textSize="18sp" />
         </LinearLayout>
 
         <Spinner
-            android:id="@+id/spinner_taktart"
+            android:id="@+id/spinner_measure_type"
             android:layout_width="fill_parent"
             android:layout_height="40dp"
             android:layout_margin="4dp"
-            android:entries="@array/string_takte"
             android:prompt="@string/promt_takte" >
         </Spinner>
     </LinearLayout>
@@ -93,40 +89,38 @@
         android:orientation="vertical" >
 
         <TextView
-            android:id="@+id/textView_beats"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:layout_gravity="bottom|left"
+            android:layout_gravity="bottom|start"
             android:layout_margin="4dp"
-            android:gravity="bottom|left"
+            android:gravity="bottom|start"
             android:minHeight="40dp"
             android:text="@string/label_beats"
             android:textSize="22sp" />
 
         <LinearLayout
-            android:id="@+id/layout_bpm"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:minHeight="48dp" >
 
             <EditText
-                android:id="@+id/text_bpm"
+                android:id="@+id/text_beats_per_minute"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_margin="4dp"
                 android:layout_weight="1"
                 android:inputType="numberDecimal"
                 android:minHeight="40dp"
-                android:textSize="22sp" />
+                android:textSize="22sp"
+                android:imeOptions="actionGo"/>
 
             <TextView
-                android:id="@+id/label_bpm"
                 android:layout_width="wrap_content"
                 android:layout_height="40dp"
                 android:layout_margin="4dp"
-                android:gravity="left|center_vertical"
+                android:gravity="start|center_vertical"
                 android:minHeight="40dp"
-                android:text="@string/label_bpm"
+                android:text="@string/label_beats_per_minute"
                 android:textSize="18sp" />
         </LinearLayout>
 
@@ -136,27 +130,27 @@
             android:layout_height="wrap_content" >
 
             <EditText
-                android:id="@+id/text_bd"
+                android:id="@+id/text_beat_duration"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_margin="4dp"
                 android:layout_weight="1"
                 android:inputType="numberDecimal"
                 android:minHeight="40dp"
-                android:textSize="18sp" />
+                android:textSize="18sp"
+                android:imeOptions="actionGo"/>
 
             <TextView
-                android:id="@+id/label_bd"
                 android:layout_width="wrap_content"
                 android:layout_height="40dp"
                 android:layout_margin="4dp"
-                android:gravity="left|center_vertical"
-                android:text="@string/label_bd"
+                android:gravity="start|center_vertical"
+                android:text="@string/label_beat_duration"
                 android:textSize="18sp" />
         </LinearLayout>
 
         <Spinner
-            android:id="@+id/spinner_tapart"
+            android:id="@+id/spinner_tap_type"
             android:layout_width="fill_parent"
             android:layout_height="40dp"
             android:layout_margin="4dp"
