@@ -1,5 +1,7 @@
 language: android
-jdk: oraclejdk7
-jdk: oraclejdk8
+jdk: 
+  - openjdk7
+  - oraclejdk7
+  - oraclejdk8
 script:
   - ./gradlew build check
