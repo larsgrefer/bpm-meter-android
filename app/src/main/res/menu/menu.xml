@@ -4,6 +4,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
     <item
         android:id="@+id/action_reset"
+        android:icon="?attr/ic_action_reset"
         android:title="@string/reset"
         app:showAsAction="always|withText"
         />

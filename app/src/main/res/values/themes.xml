@@ -9,10 +9,11 @@
 
         <item name="ic_action_about">@drawable/ic_info_white_24dp</item>
         <item name="ic_action_github">@drawable/ic_action_github</item>
+        <item name="ic_action_reset">@drawable/ic_restore_white_24dp</item>
     </style>
 
     <style name="Theme.BpmMeter" parent="Theme.BpmMeter.Base">
         <item name="borderlessButtonStyle">@android:style/Widget.Button</item>
     </style>
-
+    
 </resources>
