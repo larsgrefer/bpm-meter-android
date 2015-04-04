@@ -1,15 +1,12 @@
 package de.larsgrefer.bpm_meter.ui;
 
 import android.app.AlertDialog;
-import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
-import android.content.pm.PackageManager.NameNotFoundException;
 import android.net.Uri;
 import android.os.Bundle;
 import android.view.KeyEvent;
 import android.view.Menu;
-import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -25,16 +22,17 @@ import android.widget.TextView.OnEditorActionListener;
 import java.text.DecimalFormat;
 import java.text.ParseException;
 
-import de.larsgrefer.android.library.Logger;
-import de.larsgrefer.android.library.injection.annotation.XmlLayout;
-import de.larsgrefer.android.library.injection.annotation.XmlView;
-import de.larsgrefer.android.library.ui.InjectionActionBarActivity;
+import de.fhconfig.android.library.injection.annotation.XmlLayout;
+import de.fhconfig.android.library.injection.annotation.XmlMenu;
+import de.fhconfig.android.library.injection.annotation.XmlView;
+import de.fhconfig.android.library.ui.injection.InjectionActionBarActivity;
 import de.larsgrefer.bpm_meter.BpmMeter;
 import de.larsgrefer.bpm_meter.MeasureType;
 import de.larsgrefer.bpm_meter.R;
 import de.larsgrefer.bpm_meter.TapType;
 
 @XmlLayout(R.layout.main)
+@XmlMenu(R.menu.menu)
 public class BpmMeterActivity extends InjectionActionBarActivity {
 	BpmMeter bpmMeter;
 
@@ -58,8 +56,6 @@ public class BpmMeterActivity extends InjectionActionBarActivity {
 
 	@XmlView(R.id.spinner_tap_type)
 	Spinner tapTypeSpinner;
-
-	final Logger log = new Logger(this);
 
 	/**
 	 * Called when the activity is first created.
@@ -154,13 +150,10 @@ public class BpmMeterActivity extends InjectionActionBarActivity {
 
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
-		MenuInflater inflater = getMenuInflater();
-		inflater.inflate(R.menu.menu, menu);
+		super.onCreateOptionsMenu(menu);
 
 		Intent githubIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://github.com/larsgrefer/bpm-meter-android"));
 		menu.findItem(R.id.action_github).setIntent(githubIntent);
-
-		super.onCreateOptionsMenu(menu);
 
 		return true;
 	}
@@ -184,7 +177,7 @@ public class BpmMeterActivity extends InjectionActionBarActivity {
 						})
 						.setCancelable(true)
 						.setMessage(R.string.about_message)
-						.setTitle(R.string.about_title);
+						.setTitle(R.string.about);
 				builder.create().show();
 				return true;
 			default:

@@ -5,8 +5,6 @@
     <string name="label_measures">Takte</string>
     <string name="label_beats">Schläge</string>
 
-    <string name="button_reset">Zurücksetzen</string>
-
     <string name="promt_takte">Wählen sie die Taktart</string>
     
     <string-array name="string_taps">
@@ -21,7 +19,7 @@
     <string name="label_beat_duration">sec</string>
     
     <string name="message_parseError">Fehler beim Lesen der Zahl</string>
-    <string name="about_title">Über</string>
-    <string name="action_about">Über</string>
+    <string name="about">Über</string>
     <string name="action_github_long">Auf GitHub ansehen</string>
+    <string name="reset">Zurücksetzen</string>
 </resources>

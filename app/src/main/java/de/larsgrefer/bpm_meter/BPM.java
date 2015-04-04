@@ -8,7 +8,7 @@ public class BPM
 		if( delay == 0 )
 			return Double.POSITIVE_INFINITY;
 		else
-			return (double)(60d / delay);
+			return 60d / delay;
 	}
 
 	public static double durationFromXpm(double xpm)
@@ -16,6 +16,6 @@ public class BPM
 		if( xpm == 0 )
 			return Double.POSITIVE_INFINITY;
 		else
-			return (double)(60d / xpm);
+			return 60d / xpm;
 	}
 }
