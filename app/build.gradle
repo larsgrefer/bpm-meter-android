@@ -1,6 +1,6 @@
 apply plugin: 'com.android.application'
 
-version '3.2'
+version '3.2.1'
 
 android {
     signingConfigs {
@@ -17,7 +17,7 @@ android {
         applicationId "com.larsgrefer.bpmMeter"
         minSdkVersion 7
         targetSdkVersion 22
-        versionCode 10
+        versionCode 12
         versionName version
     }
     buildTypes {
