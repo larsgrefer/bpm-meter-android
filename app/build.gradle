@@ -3,9 +3,16 @@ apply plugin: 'com.android.application'
 version '3.2'
 
 android {
+    signingConfigs {
+        releaseSigningConfig {
+            keyAlias bpm_meter_android_key_alias
+            keyPassword bpm_meter_android_key_password
+            storeFile file('../release.keystore')
+            storePassword bpm_meter_android_keystore_password
+        }
+    }
     compileSdkVersion 22
     buildToolsVersion '22.0.1'
-
     defaultConfig {
         applicationId "com.larsgrefer.bpmMeter"
         minSdkVersion 7
@@ -17,6 +24,7 @@ android {
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.releaseSigningConfig
         }
     }
     compileOptions {
