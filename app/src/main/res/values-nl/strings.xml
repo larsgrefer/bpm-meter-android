@@ -15,4 +15,8 @@
     </string-array>
     <string name="label_beat_duration">sec</string>
 
+    <plurals name="measure">
+        <item quantity="one">Maat</item>
+        <item quantity="two">Maaten</item>
+    </plurals>
 </resources>

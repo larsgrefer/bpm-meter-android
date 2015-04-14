@@ -29,4 +29,18 @@
     <string name="about_message" translatable="false">© Lars Grefer</string>
     <string name="action_github" translateable="false" translatable="false">GitHub</string>
     <string name="action_github_long">View on GitHub</string>
+    <string name="once_per">Once per %s</string>
+
+    <plurals name="beat">
+        <item quantity="one">Beat</item>
+        <item quantity="two">Beats</item>
+        <item quantity="zero">Beats</item>
+        <item quantity="few">Beats</item>
+        <item quantity="many">Beats</item>
+        <item quantity="other">Beats</item>
+    </plurals>
+    <plurals name="measure">
+        <item quantity="one">Measure</item>
+        <item quantity="two">Measures</item>
+    </plurals>
 </resources>
