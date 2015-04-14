@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">BPM-Meter</string>
+    <string name="label_beats_per_minute">Bpm</string>
+    <string name="label_measure_duration">sec</string>
+    <string name="label_beat_duration">sec</string>
+    <string name="action_github_long">Voir sur GitHub</string>
+</resources>
