@@ -22,4 +22,14 @@
     <string name="about">Über</string>
     <string name="action_github_long">Auf GitHub ansehen</string>
     <string name="reset">Zurücksetzen</string>
+    <string name="once_per">Einmal pro %s</string>
+
+    <plurals name="beat">
+        <item quantity="one">Beat</item>
+        <item quantity="two">Beats</item>
+    </plurals>
+    <plurals name="measure">
+        <item quantity="one">Takt</item>
+        <item quantity="two">Takte</item>
+    </plurals>
 </resources>

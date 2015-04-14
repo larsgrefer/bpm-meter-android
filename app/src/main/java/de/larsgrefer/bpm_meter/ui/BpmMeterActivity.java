@@ -1,16 +1,20 @@
 package de.larsgrefer.bpm_meter.ui;
 
 import android.app.AlertDialog;
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
+import android.text.SpannableStringBuilder;
+import android.text.style.AbsoluteSizeSpan;
 import android.view.KeyEvent;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.View.OnLongClickListener;
+import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
@@ -21,6 +25,7 @@ import android.widget.TextView.OnEditorActionListener;
 
 import java.text.DecimalFormat;
 import java.text.ParseException;
+import java.util.List;
 
 import de.fhconfig.android.library.injection.annotation.XmlLayout;
 import de.fhconfig.android.library.injection.annotation.XmlMenu;
@@ -70,6 +75,7 @@ public class BpmMeterActivity extends InjectionActionBarActivity {
 			@Override
 			public void onClick(View v) {
 				bpmMeter.tap();
+                updateButtonText();
 				update();
 			}
 		});
@@ -87,8 +93,7 @@ public class BpmMeterActivity extends InjectionActionBarActivity {
 		measureTypeSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
 			@Override
 			public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-				MeasureType measureType = (MeasureType) measureTypeSpinner.getSelectedItem();
-				bpmMeter.setMeasureType(measureType);
+				bpmMeter.setMeasureType((MeasureType) measureTypeSpinner.getSelectedItem());
 				update();
 			}
 
@@ -98,10 +103,13 @@ public class BpmMeterActivity extends InjectionActionBarActivity {
 				measureTypeSpinner.setSelection(0, true);
 			}
 		});
+        TapTypeArrayAdapter tapTypeArrayAdapter = new TapTypeArrayAdapter(this, android.R.layout.simple_spinner_item, TapType.values());
+        tapTypeArrayAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        tapTypeSpinner.setAdapter(tapTypeArrayAdapter);
 		tapTypeSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
 			@Override
 			public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-				bpmMeter.setTapType((position == 0) ? TapType.MEASURES : TapType.BEATS);
+				bpmMeter.setTapType((TapType) tapTypeSpinner.getSelectedItem());
 				update();
 			}
 
@@ -147,6 +155,24 @@ public class BpmMeterActivity extends InjectionActionBarActivity {
 
 	}
 
+    public void updateButtonText(){
+
+        AbsoluteSizeSpan ass1 = new AbsoluteSizeSpan(100, true);
+        AbsoluteSizeSpan ass2 = new AbsoluteSizeSpan(25, true);
+
+        SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder();
+
+        String line1 = getString(R.string.button_tap);
+        String line2 = getResources().getString(R.string.once_per, getResources().getQuantityString(bpmMeter.getTapType().getNamePluralsResId(), 1));
+
+        spannableStringBuilder.append(line1);
+        spannableStringBuilder.setSpan(ass1, 0, line1.length(), 0);
+        spannableStringBuilder.append("\n");
+        spannableStringBuilder.append(line2);
+        spannableStringBuilder.setSpan(ass2, line1.length()+1, line1.length()+1+line2.length(), 0);
+
+        tapButton.setText(spannableStringBuilder);
+    }
 
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
@@ -220,4 +246,45 @@ public class BpmMeterActivity extends InjectionActionBarActivity {
 		}
 		return d;
 	}
+
+    private class TapTypeArrayAdapter extends ArrayAdapter<TapType>{
+
+        public TapTypeArrayAdapter(Context context, int resource) {
+            super(context, resource);
+        }
+
+        public TapTypeArrayAdapter(Context context, int resource, int textViewResourceId) {
+            super(context, resource, textViewResourceId);
+        }
+
+        public TapTypeArrayAdapter(Context context, int resource, TapType[] objects) {
+            super(context, resource, objects);
+        }
+
+        public TapTypeArrayAdapter(Context context, int resource, int textViewResourceId, TapType[] objects) {
+            super(context, resource, textViewResourceId, objects);
+        }
+
+        public TapTypeArrayAdapter(Context context, int resource, List<TapType> objects) {
+            super(context, resource, objects);
+        }
+
+        public TapTypeArrayAdapter(Context context, int resource, int textViewResourceId, List<TapType> objects) {
+            super(context, resource, textViewResourceId, objects);
+        }
+
+        @Override
+        public View getView(int position, View convertView, ViewGroup parent) {
+            View view = super.getView(position, convertView, parent);
+
+            TapType item = getItem(position);
+
+            if(view instanceof TextView){
+                TextView textView = (TextView) view;
+
+                textView.setText(getResources().getQuantityText(item.getNamePluralsResId(), 0));
+            }
+            return view;
+        }
+    }
 }
