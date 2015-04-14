@@ -1,6 +1,6 @@
 apply plugin: 'com.android.application'
 
-version '3.1'
+version '3.2'
 
 android {
     compileSdkVersion 22
@@ -10,7 +10,7 @@ android {
         applicationId "com.larsgrefer.bpmMeter"
         minSdkVersion 7
         targetSdkVersion 22
-        versionCode 9
+        versionCode 10
         versionName version
     }
     buildTypes {
