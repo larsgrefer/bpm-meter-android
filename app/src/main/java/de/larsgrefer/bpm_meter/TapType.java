@@ -1,27 +1,32 @@
 package de.larsgrefer.bpm_meter;
 
-import android.content.Context;
-import android.content.res.Resources;
-import android.support.annotation.PluralsRes;
-
-import de.fhconfig.android.library.Logger;
+import android.support.annotation.StringRes;
 
 /**
  * Created by larsgrefer on 09.01.15.
  */
 public enum TapType {
-	BEATS(R.plurals.beat),
-    MEASURES(R.plurals.measure);
+	BEATS(R.string.beat, R.string.beats),
+    MEASURES(R.string.measure, R.string.measures);
 
-    @PluralsRes
-    private int namePluralsResId;
+    @StringRes
+    private int singularNameResId;
 
-    TapType(@PluralsRes int namePluralsResId) {
-        this.namePluralsResId = namePluralsResId;
+    @StringRes
+    private int pluralNameResId;
+
+    TapType(@StringRes int singularNameResId, @StringRes int pluralNameResId) {
+        this.singularNameResId = singularNameResId;
+        this.pluralNameResId = pluralNameResId;
     }
 
-    @PluralsRes
-    public int getNamePluralsResId() {
-        return namePluralsResId;
+    @StringRes
+    public int getSingularNameResId() {
+        return singularNameResId;
+    }
+
+    @StringRes
+    public int getPluralNameResId(){
+        return pluralNameResId;
     }
 }

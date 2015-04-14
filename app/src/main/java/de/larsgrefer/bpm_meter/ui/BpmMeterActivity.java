@@ -8,6 +8,7 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.text.SpannableStringBuilder;
 import android.text.style.AbsoluteSizeSpan;
+import android.text.style.ForegroundColorSpan;
 import android.view.KeyEvent;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -27,6 +28,7 @@ import java.text.DecimalFormat;
 import java.text.ParseException;
 import java.util.List;
 
+import de.fhconfig.android.library.injection.annotation.Attribute;
 import de.fhconfig.android.library.injection.annotation.XmlLayout;
 import de.fhconfig.android.library.injection.annotation.XmlMenu;
 import de.fhconfig.android.library.injection.annotation.XmlView;
@@ -75,7 +77,6 @@ public class BpmMeterActivity extends InjectionActionBarActivity {
 			@Override
 			public void onClick(View v) {
 				bpmMeter.tap();
-                updateButtonText();
 				update();
 			}
 		});
@@ -155,21 +156,27 @@ public class BpmMeterActivity extends InjectionActionBarActivity {
 
 	}
 
+	@Attribute(id = android.R.attr.textColorHint, type = Attribute.Type.COLOR)
+	int textColorHint;
+
     public void updateButtonText(){
 
         AbsoluteSizeSpan ass1 = new AbsoluteSizeSpan(100, true);
-        AbsoluteSizeSpan ass2 = new AbsoluteSizeSpan(25, true);
+        AbsoluteSizeSpan ass2 = new AbsoluteSizeSpan(22, true);
+		ForegroundColorSpan fcs2 = new ForegroundColorSpan(textColorHint);
 
         SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder();
 
         String line1 = getString(R.string.button_tap);
-        String line2 = getResources().getString(R.string.once_per, getResources().getQuantityString(bpmMeter.getTapType().getNamePluralsResId(), 1));
+        String line2 = getResources().getString(R.string.once_per, getResources().getString(bpmMeter.getTapType().getSingularNameResId()));
 
         spannableStringBuilder.append(line1);
         spannableStringBuilder.setSpan(ass1, 0, line1.length(), 0);
         spannableStringBuilder.append("\n");
         spannableStringBuilder.append(line2);
-        spannableStringBuilder.setSpan(ass2, line1.length()+1, line1.length()+1+line2.length(), 0);
+        spannableStringBuilder.setSpan(ass2, line1.length() + 1, line1.length() + 1 + line2.length(), 0);
+		spannableStringBuilder.setSpan(fcs2, line1.length() + 1, line1.length() + 1 + line2.length(), 0);
+
 
         tapButton.setText(spannableStringBuilder);
     }
@@ -215,6 +222,8 @@ public class BpmMeterActivity extends InjectionActionBarActivity {
 	DecimalFormat xdDecimalFormat = new DecimalFormat("0.#####");
 
 	public void update() {
+
+		updateButtonText();
 
 		beatsPerMinuteText.setText(xpmDecimalFormat.format(bpmMeter.getBeatsPerMinute()));
 		measuresPerMinuteText.setText(xpmDecimalFormat.format(bpmMeter.getMeasuresPerMinute()));
@@ -282,9 +291,24 @@ public class BpmMeterActivity extends InjectionActionBarActivity {
             if(view instanceof TextView){
                 TextView textView = (TextView) view;
 
-                textView.setText(getResources().getQuantityText(item.getNamePluralsResId(), 0));
+                textView.setText(getResources().getString(item.getPluralNameResId()));
             }
             return view;
         }
-    }
+
+		@Override
+		public View getDropDownView(int position, View convertView, ViewGroup parent) {
+			View view = super.getDropDownView(position, convertView, parent);
+
+			TapType item = getItem(position);
+
+			if(view instanceof TextView){
+				TextView textView = (TextView) view;
+
+				textView.setText(getResources().getString(item.getPluralNameResId()));
+			}
+
+			return view;
+		}
+	}
 }

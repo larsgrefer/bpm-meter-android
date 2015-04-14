@@ -1,35 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">BPM-Meter</string>
-    
-    <string name="label_measures">Takte</string>
-    <string name="label_beats">Schläge</string>
 
     <string name="promt_takte">Wählen sie die Taktart</string>
-    
-    <string-array name="string_taps">
-        <item>Takte</item>
-        <item>Schläge</item>
-    </string-array>
+
     <string name="promt_taps">Was tippen sie?</string>
 
     <string name="label_measures_per_minute">TpM</string>
-    <string name="label_measure_duration">sec</string>
+    <string name="label_measure_duration">sek</string>
     <string name="label_beats_per_minute">BpM</string>
-    <string name="label_beat_duration">sec</string>
+    <string name="label_beat_duration">sek</string>
     
     <string name="message_parseError">Fehler beim Lesen der Zahl</string>
     <string name="about">Über</string>
     <string name="action_github_long">Auf GitHub ansehen</string>
     <string name="reset">Zurücksetzen</string>
     <string name="once_per">Einmal pro %s</string>
+    <string name="measure">Takt</string>
+    <string name="measures">Takte</string>
+    <string name="beat">Beat</string>
+    <string name="beats">Beats</string>
 
-    <plurals name="beat">
-        <item quantity="one">Beat</item>
-        <item quantity="two">Beats</item>
-    </plurals>
-    <plurals name="measure">
-        <item quantity="one">Takt</item>
-        <item quantity="two">Takte</item>
-    </plurals>
 </resources>

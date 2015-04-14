@@ -5,4 +5,9 @@
     <string name="label_measure_duration">sec</string>
     <string name="label_beat_duration">sec</string>
     <string name="action_github_long">Voir sur GitHub</string>
+    <string name="beats">Battements</string>
+    <string name="measure">Mesure</string>
+    <string name="measures">Mesures</string>
+    <string name="once_per">Une fois par %s</string>
+    <string name="about">Sur</string>
 </resources>

@@ -4,16 +4,9 @@
     tools:lang="en"
     tools:ignore="MissingTranslation">
     <string name="app_name">BPM-Meter</string>
-    <string name="label_measures">Measures</string>
-    <string name="label_beats">Beats</string>
     <string name="button_tap" translatable="false">TAP</string>
 
     <string name="promt_takte">Select the measure-type</string>
-
-    <string-array name="string_taps">
-        <item>Measures</item>
-        <item>Beats</item>
-    </string-array>
 
     <string name="promt_taps">What are you tapping?</string>
     <string name="label_measures_per_minute">MpM</string>
@@ -31,16 +24,8 @@
     <string name="action_github_long">View on GitHub</string>
     <string name="once_per">Once per %s</string>
 
-    <plurals name="beat">
-        <item quantity="one">Beat</item>
-        <item quantity="two">Beats</item>
-        <item quantity="zero">Beats</item>
-        <item quantity="few">Beats</item>
-        <item quantity="many">Beats</item>
-        <item quantity="other">Beats</item>
-    </plurals>
-    <plurals name="measure">
-        <item quantity="one">Measure</item>
-        <item quantity="two">Measures</item>
-    </plurals>
+    <string name="beat">Beat</string>
+    <string name="beats">Beats</string>
+    <string name="measure">Measure</string>
+    <string name="measures">Measures</string>
 </resources>
