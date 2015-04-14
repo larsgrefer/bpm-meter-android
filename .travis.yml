@@ -3,5 +3,11 @@ jdk:
   - openjdk7
   - oraclejdk7
   - oraclejdk8
+android:
+  components:
+    - build-tools-22.0.1
+    - android-22
+    - android-7
+    - extra
 script:
   - ./gradlew build check
