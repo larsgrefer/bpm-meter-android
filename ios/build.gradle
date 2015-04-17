@@ -1,0 +1,31 @@
+buildscript {
+    repositories {
+        mavenCentral()
+        maven { url 'https://oss.sonatype.org/content/repositories/snapshots' }
+    }
+    dependencies {
+        classpath 'org.robovm:robovm-gradle-plugin:1.1.0'
+    }
+}
+
+apply plugin: 'java'
+apply plugin: 'robovm'
+
+repositories {
+    mavenCentral()
+    maven { url 'https://oss.sonatype.org/content/repositories/snapshots' }
+}
+
+ext {
+    roboVMVersion = "1.1.0"
+}
+
+robovm {
+}
+
+dependencies {
+    compile "org.robovm:robovm-rt:${roboVMVersion}"
+    compile "org.robovm:robovm-cocoatouch:${roboVMVersion}"
+    compile project(':bpm-base')
+    testCompile "junit:junit:4.12"
+}

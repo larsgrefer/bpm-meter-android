@@ -1,4 +1,4 @@
-package de.larsgrefer.bpm_meter;
+package de.larsgrefer.bpm_meter.base;
 
 public class BPM
 {

@@ -1,4 +1,4 @@
-package de.larsgrefer.bpm_meter;
+package de.larsgrefer.bpm_meter.base;
 
 import java.util.LinkedList;
 import java.util.List;
