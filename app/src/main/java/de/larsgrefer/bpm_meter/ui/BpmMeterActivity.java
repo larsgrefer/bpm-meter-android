@@ -33,10 +33,9 @@ import de.fhconfig.android.library.injection.annotation.XmlLayout;
 import de.fhconfig.android.library.injection.annotation.XmlMenu;
 import de.fhconfig.android.library.injection.annotation.XmlView;
 import de.fhconfig.android.library.ui.injection.InjectionActionBarActivity;
-import de.larsgrefer.bpm_meter.BpmMeter;
-import de.larsgrefer.bpm_meter.MeasureType;
 import de.larsgrefer.bpm_meter.R;
-import de.larsgrefer.bpm_meter.TapType;
+import de.larsgrefer.bpm_meter.base.BpmMeter;
+import de.larsgrefer.bpm_meter.base.MeasureType;
 
 @XmlLayout(R.layout.main)
 @XmlMenu(R.menu.menu)
@@ -110,7 +109,7 @@ public class BpmMeterActivity extends InjectionActionBarActivity {
 		tapTypeSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
 			@Override
 			public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-				bpmMeter.setTapType((TapType) tapTypeSpinner.getSelectedItem());
+				bpmMeter.setTapType(((TapType) tapTypeSpinner.getSelectedItem()).toTapType());
 				update();
 			}
 
@@ -168,7 +167,7 @@ public class BpmMeterActivity extends InjectionActionBarActivity {
         SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder();
 
         String line1 = getString(R.string.button_tap);
-        String line2 = getResources().getString(R.string.once_per, getResources().getString(bpmMeter.getTapType().getSingularNameResId()));
+        String line2 = getResources().getString(R.string.once_per, getResources().getString(TapType.fromTapType(bpmMeter.getTapType()).getSingularNameResId()));
 
         spannableStringBuilder.append(line1);
         spannableStringBuilder.setSpan(ass1, 0, line1.length(), 0);

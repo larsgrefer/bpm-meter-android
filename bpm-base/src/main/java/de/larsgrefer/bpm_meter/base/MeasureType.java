@@ -1,4 +1,4 @@
-package de.larsgrefer.bpm_meter;
+package de.larsgrefer.bpm_meter.base;
 
 /**
  * Created by larsgrefer on 09.01.15.

@@ -1,0 +1,7 @@
+app.name="BPM-Meter";
+beats="Beats";
+measures="Measures";
+tpm="mpm";
+bpm="bpm";
+sec="sec";
+tap="TAP";
