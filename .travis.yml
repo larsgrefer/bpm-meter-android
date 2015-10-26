@@ -3,18 +3,14 @@ sudo: false
 cache:
   directories:
   - "$HOME/.gradle"
-jdk:
-- openjdk7
-- oraclejdk7
-- oraclejdk8
+jdk: oraclejdk8
 android:
   components:
   - build-tools-22.0.1
   - android-22
   - android-7
   - extra
-script:
-- "./gradlew build check"
+script: "./gradlew build check"
 before_install:
 - openssl aes-256-cbc -K $encrypted_69044bd0f1e4_key -iv $encrypted_69044bd0f1e4_iv
   -in playstore-apikey.json.enc -out playstore-apikey.json -d
@@ -29,4 +25,3 @@ deploy:
   on:
     repo: larsgrefer/bpm-meter-android
     tags: true
-    jdk: oraclejdk8
