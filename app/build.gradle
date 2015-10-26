@@ -35,7 +35,7 @@ android {
 }
 
 play {
-    jsonFile = new File('../playstore-apikey.json');
+    jsonFile = new File('playstore-apikey.json');
     uploadImages = true
 }
 
