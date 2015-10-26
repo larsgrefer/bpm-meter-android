@@ -16,3 +16,4 @@ gradle-app.setting
 !gradle-wrapper.jar
 
 *.keystore
+playstore-apikey.json
