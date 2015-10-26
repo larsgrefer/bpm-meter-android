@@ -34,9 +34,17 @@ android {
     }
 }
 
+def isTravis = "true".equals(System.getenv("TRAVIS"))
+def publishTrack = 'production'
+
+if(isTravis) {
+    publishTrack = 'beta'
+}
+
 play {
     jsonFile = new File('playstore-apikey.json');
     uploadImages = true
+    track = publishTrack
 }
 
 dependencies {
