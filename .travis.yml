@@ -13,9 +13,9 @@ android:
 script: "./gradlew build check"
 before_install:
 - openssl aes-256-cbc -K $encrypted_69044bd0f1e4_key -iv $encrypted_69044bd0f1e4_iv
-  -in playstore-apikey.json.enc -out playstore-apikey.json -d
-- openssl aes-256-cbc -K $encrypted_69044bd0f1e4_key -iv $encrypted_69044bd0f1e4_iv
   -in release.keystore.enc -out release.keystore -d
+- openssl aes-256-cbc -K $encrypted_69044bd0f1e4_key -iv $encrypted_69044bd0f1e4_iv
+  -in playstore-apikey.json.enc -out playstore-apikey.json -d
 deploy:
   provider: releases
   api_key:
