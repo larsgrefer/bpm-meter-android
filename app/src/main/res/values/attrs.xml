@@ -3,6 +3,4 @@
     <attr name="ic_action_reset" format="reference"/>
     <attr name="ic_action_github" format="reference" />
     <attr name="ic_action_about" format="reference"/>
-
-    <attr name="borderlessButtonStyle"/>
 </resources>

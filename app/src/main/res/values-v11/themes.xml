@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <style name="Theme.BpmMeter" parent="Theme.BpmMeter.Base">
-
         <item name="borderlessButtonStyle">?android:borderlessButtonStyle</item>
     </style>
 

@@ -28,40 +28,45 @@ import java.text.DecimalFormat;
 import java.text.ParseException;
 import java.util.List;
 
-import de.fhconfig.android.library.injection.annotation.Attribute;
-import de.fhconfig.android.library.injection.annotation.XmlLayout;
-import de.fhconfig.android.library.injection.annotation.XmlMenu;
-import de.fhconfig.android.library.injection.annotation.XmlView;
-import de.fhconfig.android.library.ui.injection.InjectionActionBarActivity;
 import de.larsgrefer.bpm_meter.BpmMeter;
 import de.larsgrefer.bpm_meter.MeasureType;
 import de.larsgrefer.bpm_meter.R;
 import de.larsgrefer.bpm_meter.TapType;
+import io.freefair.android.injection.annotation.Inject;
+import io.freefair.android.injection.annotation.InjectAttribute;
+import io.freefair.android.injection.annotation.InjectView;
+import io.freefair.android.injection.annotation.XmlLayout;
+import io.freefair.android.injection.annotation.XmlMenu;
+import io.freefair.android.injection.ui.InjectionAppCompatActivity;
+
+import static io.freefair.android.injection.annotation.AttributeType.COLOR;
 
 @XmlLayout(R.layout.main)
 @XmlMenu(R.menu.menu)
-public class BpmMeterActivity extends InjectionActionBarActivity {
+public class BpmMeterActivity extends InjectionAppCompatActivity {
+
+	@Inject
 	BpmMeter bpmMeter;
 
-	@XmlView(R.id.button_tap)
+	@InjectView(R.id.button_tap)
 	Button tapButton;
 
-	@XmlView(R.id.text_beats_per_minute)
+	@InjectView(R.id.text_beats_per_minute)
 	EditText beatsPerMinuteText;
 
-	@XmlView(R.id.text_beat_duration)
+	@InjectView(R.id.text_beat_duration)
 	EditText beatDurationText;
 
-	@XmlView(R.id.text_measures_per_minute)
+	@InjectView(R.id.text_measures_per_minute)
 	EditText measuresPerMinuteText;
 
-	@XmlView(R.id.text_measure_duration)
+	@InjectView(R.id.text_measure_duration)
 	EditText measureDurationText;
 
-	@XmlView(R.id.spinner_measure_type)
+	@InjectView(R.id.spinner_measure_type)
 	Spinner measureTypeSpinner;
 
-	@XmlView(R.id.spinner_tap_type)
+	@InjectView(R.id.spinner_tap_type)
 	Spinner tapTypeSpinner;
 
 	/**
@@ -70,8 +75,6 @@ public class BpmMeterActivity extends InjectionActionBarActivity {
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-
-		bpmMeter = new BpmMeter();
 
 		tapButton.setOnClickListener(new OnClickListener() {
 			@Override
@@ -156,7 +159,7 @@ public class BpmMeterActivity extends InjectionActionBarActivity {
 
 	}
 
-	@Attribute(id = android.R.attr.textColorHint, type = Attribute.Type.COLOR)
+	@InjectAttribute(id = android.R.attr.textColorHint, type = COLOR)
 	int textColorHint;
 
     public void updateButtonText(){

@@ -16,12 +16,12 @@ android {
             storePassword bpm_meter_android_keystore_password
         }
     }
-    compileSdkVersion 22
-    buildToolsVersion '22.0.1'
+    compileSdkVersion 23
+    buildToolsVersion '23.0.1'
     defaultConfig {
         applicationId "com.larsgrefer.bpmMeter"
-        minSdkVersion 7
-        targetSdkVersion 22
+        minSdkVersion 9
+        targetSdkVersion 23
         versionCode 13
         versionName tempVersion
     }
@@ -46,6 +46,6 @@ play {
 
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
-    compile 'de.larsgrefer:android-library:0.7.2'
-    compile 'com.android.support:support-v4:22.0.0'
+    compile 'com.github.freefair.android-library:material-colors:1.0.0-rc1'
+    compile 'com.github.freefair.android-library:injection:1.0.0-rc1'
 }
