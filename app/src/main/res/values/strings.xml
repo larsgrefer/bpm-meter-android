@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources
     xmlns:tools="http://schemas.android.com/tools"
-    tools:lang="en"
-    tools:ignore="MissingTranslation">
+    tools:ignore="MissingTranslation"
+    tools:lang="en">
     <string name="app_name">BPM-Meter</string>
     <string name="button_tap" translatable="false">TAP</string>
 
@@ -15,12 +15,12 @@
     <string name="label_beat_duration">sec</string>
     <string name="message_parseError">Error while reading the number</string>
     <string name="button_parseError" translatable="false">OK</string>
-    
+
     <string name="about">About</string>
     <string name="reset">Reset</string>
-    
+
     <string name="about_message" translatable="false">© Lars Grefer</string>
-    <string name="action_github" translateable="false" translatable="false">GitHub</string>
+    <string name="action_github" translatable="false" translateable="false">GitHub</string>
     <string name="action_github_long">View on GitHub</string>
     <string name="once_per">Once per %s</string>
 
