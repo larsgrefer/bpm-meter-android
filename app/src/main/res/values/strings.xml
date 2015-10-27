@@ -16,7 +16,7 @@
     <string name="message_parseError">Error while reading the number</string>
     <string name="button_parseError" translatable="false">OK</string>
 
-    <string name="about">About</string>
+    <string name="about">About this App</string>
     <string name="reset">Reset</string>
 
     <string name="about_message" translatable="false">© Lars Grefer</string>
@@ -28,4 +28,6 @@
     <string name="beats">Beats</string>
     <string name="measure">Measure</string>
     <string name="measures">Measures</string>
+    <string name="version">Version</string>
+    <string name="settings">Settings</string>
 </resources>

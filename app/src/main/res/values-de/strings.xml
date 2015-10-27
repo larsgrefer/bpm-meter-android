@@ -12,7 +12,7 @@
     <string name="label_beat_duration">sek</string>
     
     <string name="message_parseError">Fehler beim Lesen der Zahl</string>
-    <string name="about">Über</string>
+    <string name="about">Über diese App</string>
     <string name="action_github_long">Auf GitHub ansehen</string>
     <string name="reset">Zurücksetzen</string>
     <string name="once_per">Einmal pro %s</string>
@@ -20,5 +20,7 @@
     <string name="measures">Takte</string>
     <string name="beat">Beat</string>
     <string name="beats">Beats</string>
+    <string name="settings">Einstellungen</string>
+    <string name="version">Version</string>
 
 </resources>

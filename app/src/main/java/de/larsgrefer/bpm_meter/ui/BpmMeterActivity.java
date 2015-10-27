@@ -191,6 +191,9 @@ public class BpmMeterActivity extends InjectionAppCompatActivity {
 		Intent githubIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://github.com/larsgrefer/bpm-meter-android"));
 		menu.findItem(R.id.action_github).setIntent(githubIntent);
 
+		Intent settingsIntent = new Intent(this, SettingsActivity.class);
+		menu.findItem(R.id.action_settings).setIntent(settingsIntent);
+
 		return true;
 	}
 
@@ -201,20 +204,6 @@ public class BpmMeterActivity extends InjectionAppCompatActivity {
 			case R.id.action_reset:
 				bpmMeter.reset();
 				this.update();
-				return true;
-			case R.id.action_about:
-				AlertDialog.Builder builder = new AlertDialog.Builder(this);
-				builder.setPositiveButton(android.R.string.ok, null)
-						.setNeutralButton(R.string.action_github_long, new DialogInterface.OnClickListener() {
-							@Override
-							public void onClick(DialogInterface dialog, int which) {
-								startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("https://github.com/larsgrefer/bpm-meter-android")));
-							}
-						})
-						.setCancelable(true)
-						.setMessage(R.string.about_message)
-						.setTitle(R.string.about);
-				builder.create().show();
 				return true;
 			default:
 				return super.onOptionsItemSelected(item);
