@@ -1,7 +1,11 @@
 apply plugin: 'com.android.application'
 apply plugin: 'com.github.triplet.play'
 
-version '3.2.1'
+def tempVersion = 'git describe --abbrev=0 --tags'.execute([],rootProject.projectDir).text.trim()
+
+if(hasProperty('version') && !'unspecified'.equals(version)) {
+    tempVersion = version
+}
 
 android {
     signingConfigs {
@@ -18,8 +22,8 @@ android {
         applicationId "com.larsgrefer.bpmMeter"
         minSdkVersion 7
         targetSdkVersion 22
-        versionCode 12
-        versionName version
+        versionCode 13
+        versionName tempVersion
     }
     buildTypes {
         release {
@@ -34,17 +38,10 @@ android {
     }
 }
 
-def isTravis = "true".equals(System.getenv("TRAVIS"))
-def publishTrack = 'production'
-
-if(isTravis) {
-    publishTrack = 'beta'
-}
-
 play {
     jsonFile = new File('playstore-apikey.json');
     uploadImages = true
-    track = publishTrack
+    track = 'beta'
 }
 
 dependencies {
