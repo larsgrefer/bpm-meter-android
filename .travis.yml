@@ -6,9 +6,8 @@ cache:
 jdk: oraclejdk8
 android:
   components:
-  - build-tools-22.0.1
-  - android-22
-  - android-7
+  - build-tools-23.0.1
+  - android-23
   - extra
 script: './gradlew build check'
 before_install:
