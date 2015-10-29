@@ -22,5 +22,6 @@
     <string name="beats">Beats</string>
     <string name="settings">Einstellungen</string>
     <string name="version">Version</string>
+    <string name="report_a_bug">Einen Fehler melden</string>
 
 </resources>

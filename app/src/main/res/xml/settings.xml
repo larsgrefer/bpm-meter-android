@@ -4,6 +4,15 @@
         android:title="@string/about">
         <Preference
             android:key="pref_version"
+            android:icon="@drawable/ic_info_outline_24dp"
             android:title="@string/version"/>
+        <Preference
+            android:icon="@drawable/ic_bug_report_24dp"
+            android:title="@string/report_a_bug">
+            <intent
+                android:action="android.intent.action.VIEW"
+                android:data="https://github.com/larsgrefer/bpm-meter-android/issues"
+                android:mimeType="text/html"/>
+        </Preference>
     </PreferenceCategory>
 </PreferenceScreen>
