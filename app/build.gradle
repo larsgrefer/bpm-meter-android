@@ -46,7 +46,8 @@ play {
 
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
-    compile 'com.github.freefair.android-colors:material:1.0.0-rc2'
+    compile 'com.android.support:design:23.1.0'
+    compile 'com.github.freefair.android-colors:material:1.0.0'
     compile 'com.github.freefair.android-library:appcompat-preference:1.0.0-rc1'
     compile 'com.github.freefair.android-library:injection:1.0.0-rc1'
 }

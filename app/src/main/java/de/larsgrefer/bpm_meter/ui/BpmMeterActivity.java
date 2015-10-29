@@ -5,12 +5,12 @@ import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
+import android.support.design.widget.FloatingActionButton;
 import android.text.SpannableStringBuilder;
 import android.text.style.AbsoluteSizeSpan;
 import android.text.style.ForegroundColorSpan;
 import android.view.KeyEvent;
 import android.view.Menu;
-import android.view.MenuItem;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.View.OnLongClickListener;
@@ -68,6 +68,9 @@ public class BpmMeterActivity extends InjectionAppCompatActivity {
 	@InjectView(R.id.spinner_tap_type)
 	Spinner tapTypeSpinner;
 
+	@InjectView(R.id.floating_action_button)
+	FloatingActionButton fab;
+
 	/**
 	 * Called when the activity is first created.
 	 */
@@ -88,6 +91,13 @@ public class BpmMeterActivity extends InjectionAppCompatActivity {
 				bpmMeter.reset();
 				update();
 				return true;
+			}
+		});
+		fab.setOnClickListener(new OnClickListener() {
+			@Override
+			public void onClick(View v) {
+				bpmMeter.reset();
+				update();
 			}
 		});
 		ArrayAdapter<MeasureType> measureTypeArrayAdapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_item, MeasureType.values());
@@ -194,19 +204,6 @@ public class BpmMeterActivity extends InjectionAppCompatActivity {
 		menu.findItem(R.id.action_settings).setIntent(settingsIntent);
 
 		return true;
-	}
-
-	@Override
-	public boolean onOptionsItemSelected(MenuItem item) {
-		// Handle item selection
-		switch (item.getItemId()) {
-			case R.id.action_reset:
-				bpmMeter.reset();
-				this.update();
-				return true;
-			default:
-				return super.onOptionsItemSelected(item);
-		}
 	}
 
 	DecimalFormat xpmDecimalFormat = new DecimalFormat("0.##");
