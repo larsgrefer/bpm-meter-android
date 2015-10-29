@@ -6,7 +6,7 @@ android:
   - platform-tools
   - build-tools-23.0.1
   - android-23
-  - extra-android
+  - extra-android-m2repository
 script: './gradlew build check'
 after_failure: 'cat app/build/outputs/lint-results.xml'
 before_install:
