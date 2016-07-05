@@ -46,7 +46,7 @@ play {
 
 dependencies {
     compile 'com.android.support:design:23.4.0'
-    compile 'com.github.freefair.android-colors:material:1.0.0'
-    compile 'com.github.freefair.android-library:appcompat-preference:1.0.0-rc1'
-    compile 'com.github.freefair.android-library:injection:1.0.0-rc1'
+    compile 'io.freefair.android-colors:material:1.2.0'
+    compile 'io.freefair.android-library:appcompat-preference:1.0.0-rc1'
+    compile 'io.freefair.android-injection:injection:2.0.0-beta1'
 }

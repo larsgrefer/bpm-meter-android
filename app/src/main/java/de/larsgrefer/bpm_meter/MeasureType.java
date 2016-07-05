@@ -1,8 +1,5 @@
 package de.larsgrefer.bpm_meter;
 
-/**
- * Created by larsgrefer on 09.01.15.
- */
 public enum MeasureType {
 
 	MT4_4(4, "4/4"),

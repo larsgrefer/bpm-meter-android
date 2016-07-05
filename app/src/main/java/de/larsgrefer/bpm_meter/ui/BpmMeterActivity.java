@@ -36,7 +36,7 @@ import io.freefair.android.injection.annotation.InjectAttribute;
 import io.freefair.android.injection.annotation.InjectView;
 import io.freefair.android.injection.annotation.XmlLayout;
 import io.freefair.android.injection.annotation.XmlMenu;
-import io.freefair.android.injection.ui.InjectionAppCompatActivity;
+import io.freefair.android.injection.app.InjectionAppCompatActivity;
 
 import static io.freefair.android.injection.annotation.AttributeType.COLOR;
 
@@ -44,138 +44,138 @@ import static io.freefair.android.injection.annotation.AttributeType.COLOR;
 @XmlMenu(R.menu.menu)
 public class BpmMeterActivity extends InjectionAppCompatActivity {
 
-	@Inject
-	BpmMeter bpmMeter;
+    @Inject
+    BpmMeter bpmMeter;
 
-	@InjectView(R.id.button_tap)
-	Button tapButton;
+    @InjectView(R.id.button_tap)
+    Button tapButton;
 
-	@InjectView(R.id.text_beats_per_minute)
-	EditText beatsPerMinuteText;
+    @InjectView(R.id.text_beats_per_minute)
+    EditText beatsPerMinuteText;
 
-	@InjectView(R.id.text_beat_duration)
-	EditText beatDurationText;
+    @InjectView(R.id.text_beat_duration)
+    EditText beatDurationText;
 
-	@InjectView(R.id.text_measures_per_minute)
-	EditText measuresPerMinuteText;
+    @InjectView(R.id.text_measures_per_minute)
+    EditText measuresPerMinuteText;
 
-	@InjectView(R.id.text_measure_duration)
-	EditText measureDurationText;
+    @InjectView(R.id.text_measure_duration)
+    EditText measureDurationText;
 
-	@InjectView(R.id.spinner_measure_type)
-	Spinner measureTypeSpinner;
+    @InjectView(R.id.spinner_measure_type)
+    Spinner measureTypeSpinner;
 
-	@InjectView(R.id.spinner_tap_type)
-	Spinner tapTypeSpinner;
+    @InjectView(R.id.spinner_tap_type)
+    Spinner tapTypeSpinner;
 
-	@InjectView(R.id.floating_action_button)
-	FloatingActionButton fab;
+    @InjectView(R.id.floating_action_button)
+    FloatingActionButton fab;
 
-	/**
-	 * Called when the activity is first created.
-	 */
-	@Override
-	public void onCreate(Bundle savedInstanceState) {
-		super.onCreate(savedInstanceState);
+    /**
+     * Called when the activity is first created.
+     */
+    @Override
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
 
-		tapButton.setOnClickListener(new OnClickListener() {
-			@Override
-			public void onClick(View v) {
-				bpmMeter.tap();
-				update();
-			}
-		});
-		tapButton.setOnLongClickListener(new OnLongClickListener() {
-			@Override
-			public boolean onLongClick(View v) {
-				bpmMeter.reset();
-				update();
-				return true;
-			}
-		});
-		fab.setOnClickListener(new OnClickListener() {
-			@Override
-			public void onClick(View v) {
-				bpmMeter.reset();
-				update();
-			}
-		});
-		ArrayAdapter<MeasureType> measureTypeArrayAdapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_item, MeasureType.values());
-		measureTypeArrayAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-		measureTypeSpinner.setAdapter(measureTypeArrayAdapter);
-		measureTypeSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-			@Override
-			public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-				bpmMeter.setMeasureType((MeasureType) measureTypeSpinner.getSelectedItem());
-				update();
-			}
+        tapButton.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                bpmMeter.tap();
+                update();
+            }
+        });
+        tapButton.setOnLongClickListener(new OnLongClickListener() {
+            @Override
+            public boolean onLongClick(View v) {
+                bpmMeter.reset();
+                update();
+                return true;
+            }
+        });
+        fab.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                bpmMeter.reset();
+                update();
+            }
+        });
+        ArrayAdapter<MeasureType> measureTypeArrayAdapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_item, MeasureType.values());
+        measureTypeArrayAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        measureTypeSpinner.setAdapter(measureTypeArrayAdapter);
+        measureTypeSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                bpmMeter.setMeasureType((MeasureType) measureTypeSpinner.getSelectedItem());
+                update();
+            }
 
-			@Override
-			public void onNothingSelected(AdapterView<?> parent) {
-				bpmMeter.setMeasureType(MeasureType.MT4_4);
-				measureTypeSpinner.setSelection(0, true);
-			}
-		});
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+                bpmMeter.setMeasureType(MeasureType.MT4_4);
+                measureTypeSpinner.setSelection(0, true);
+            }
+        });
         TapTypeArrayAdapter tapTypeArrayAdapter = new TapTypeArrayAdapter(this, android.R.layout.simple_spinner_item, TapType.values());
         tapTypeArrayAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         tapTypeSpinner.setAdapter(tapTypeArrayAdapter);
-		tapTypeSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-			@Override
-			public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-				bpmMeter.setTapType((TapType) tapTypeSpinner.getSelectedItem());
-				update();
-			}
+        tapTypeSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                bpmMeter.setTapType((TapType) tapTypeSpinner.getSelectedItem());
+                update();
+            }
 
-			@Override
-			public void onNothingSelected(AdapterView<?> parent) {
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
 
-			}
-		});
-		beatsPerMinuteText.setOnEditorActionListener(new OnEditorActionListener() {
-			@Override
-			public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
-				bpmMeter.setBeatsPerMinute(getDoubleFromTextView(v));
-				update();
-				return true;
-			}
-		});
-		measuresPerMinuteText.setOnEditorActionListener(new OnEditorActionListener() {
-			@Override
-			public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
-				bpmMeter.setMeasuresPerMinute(getDoubleFromTextView(v));
-				update();
-				return true;
-			}
-		});
-		beatDurationText.setOnEditorActionListener(new OnEditorActionListener() {
-			@Override
-			public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
-				tapTypeSpinner.setSelection(1, true);
-				bpmMeter.setBeatDuration(getDoubleFromTextView(v));
-				update();
-				return true;
-			}
-		});
-		measureDurationText.setOnEditorActionListener(new OnEditorActionListener() {
-			@Override
-			public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
-				measureTypeSpinner.setSelection(0, true);
-				bpmMeter.setMeasureDuration(getDoubleFromTextView(v));
-				update();
-				return true;
-			}
-		});
+            }
+        });
+        beatsPerMinuteText.setOnEditorActionListener(new OnEditorActionListener() {
+            @Override
+            public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
+                bpmMeter.setBeatsPerMinute(getDoubleFromTextView(v));
+                update();
+                return true;
+            }
+        });
+        measuresPerMinuteText.setOnEditorActionListener(new OnEditorActionListener() {
+            @Override
+            public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
+                bpmMeter.setMeasuresPerMinute(getDoubleFromTextView(v));
+                update();
+                return true;
+            }
+        });
+        beatDurationText.setOnEditorActionListener(new OnEditorActionListener() {
+            @Override
+            public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
+                tapTypeSpinner.setSelection(1, true);
+                bpmMeter.setBeatDuration(getDoubleFromTextView(v));
+                update();
+                return true;
+            }
+        });
+        measureDurationText.setOnEditorActionListener(new OnEditorActionListener() {
+            @Override
+            public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
+                measureTypeSpinner.setSelection(0, true);
+                bpmMeter.setMeasureDuration(getDoubleFromTextView(v));
+                update();
+                return true;
+            }
+        });
 
-	}
+    }
 
-	@InjectAttribute(id = android.R.attr.textColorHint, type = COLOR)
-	int textColorHint;
+    @InjectAttribute(id = android.R.attr.textColorHint, type = COLOR)
+    int textColorHint;
 
-    public void updateButtonText(){
+    public void updateButtonText() {
 
         AbsoluteSizeSpan ass1 = new AbsoluteSizeSpan(100, true);
         AbsoluteSizeSpan ass2 = new AbsoluteSizeSpan(22, true);
-		ForegroundColorSpan fcs2 = new ForegroundColorSpan(textColorHint);
+        ForegroundColorSpan fcs2 = new ForegroundColorSpan(textColorHint);
 
         SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder();
 
@@ -187,64 +187,64 @@ public class BpmMeterActivity extends InjectionAppCompatActivity {
         spannableStringBuilder.append("\n");
         spannableStringBuilder.append(line2);
         spannableStringBuilder.setSpan(ass2, line1.length() + 1, line1.length() + 1 + line2.length(), 0);
-		spannableStringBuilder.setSpan(fcs2, line1.length() + 1, line1.length() + 1 + line2.length(), 0);
+        spannableStringBuilder.setSpan(fcs2, line1.length() + 1, line1.length() + 1 + line2.length(), 0);
 
 
         tapButton.setText(spannableStringBuilder);
     }
 
-	@Override
-	public boolean onCreateOptionsMenu(Menu menu) {
-		super.onCreateOptionsMenu(menu);
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        super.onCreateOptionsMenu(menu);
 
-		Intent githubIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://github.com/larsgrefer/bpm-meter-android"));
-		menu.findItem(R.id.action_github).setIntent(githubIntent);
+        Intent githubIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://github.com/larsgrefer/bpm-meter-android"));
+        menu.findItem(R.id.action_github).setIntent(githubIntent);
 
-		Intent settingsIntent = new Intent(this, SettingsActivity.class);
-		menu.findItem(R.id.action_settings).setIntent(settingsIntent);
+        Intent settingsIntent = new Intent(this, SettingsActivity.class);
+        menu.findItem(R.id.action_settings).setIntent(settingsIntent);
 
-		return true;
-	}
+        return true;
+    }
 
-	DecimalFormat xpmDecimalFormat = new DecimalFormat("0.##");
-	DecimalFormat xdDecimalFormat = new DecimalFormat("0.#####");
+    DecimalFormat xpmDecimalFormat = new DecimalFormat("0.##");
+    DecimalFormat xdDecimalFormat = new DecimalFormat("0.#####");
 
-	public void update() {
+    public void update() {
 
-		updateButtonText();
+        updateButtonText();
 
-		beatsPerMinuteText.setText(xpmDecimalFormat.format(bpmMeter.getBeatsPerMinute()));
-		measuresPerMinuteText.setText(xpmDecimalFormat.format(bpmMeter.getMeasuresPerMinute()));
+        beatsPerMinuteText.setText(xpmDecimalFormat.format(bpmMeter.getBeatsPerMinute()));
+        measuresPerMinuteText.setText(xpmDecimalFormat.format(bpmMeter.getMeasuresPerMinute()));
 
-		beatDurationText.setText(xdDecimalFormat.format(bpmMeter.getBeatDuration()));
-		measureDurationText.setText(xdDecimalFormat.format(bpmMeter.getMeasureDuration()));
-	}
+        beatDurationText.setText(xdDecimalFormat.format(bpmMeter.getBeatDuration()));
+        measureDurationText.setText(xdDecimalFormat.format(bpmMeter.getMeasureDuration()));
+    }
 
-	public double getDoubleFromTextView(TextView v){
-		String s = ((EditText) v).getText().toString();
-		DecimalFormat df = new DecimalFormat();
-		double d = 0;
-		try {
-			s = s.replace(",", ".");
-			d = df.parse(s).doubleValue();
-		} catch (ParseException e1) {
-			try {
-				s = s.replace(".", ",");
-				d = df.parse(s).doubleValue();
-			} catch (ParseException e2) {
-				AlertDialog.Builder builder = new AlertDialog.Builder(this);
-				builder.setMessage(R.string.message_parseError)
-						.setCancelable(false)
-						.setIcon(android.R.drawable.ic_dialog_alert)
-						.setNeutralButton(R.string.button_parseError, null);
-				AlertDialog alert = builder.create();
-				alert.show();
-			}
-		}
-		return d;
-	}
+    public double getDoubleFromTextView(TextView v) {
+        String s = ((EditText) v).getText().toString();
+        DecimalFormat df = new DecimalFormat();
+        double d = 0;
+        try {
+            s = s.replace(",", ".");
+            d = df.parse(s).doubleValue();
+        } catch (ParseException e1) {
+            try {
+                s = s.replace(".", ",");
+                d = df.parse(s).doubleValue();
+            } catch (ParseException e2) {
+                AlertDialog.Builder builder = new AlertDialog.Builder(this);
+                builder.setMessage(R.string.message_parseError)
+                        .setCancelable(false)
+                        .setIcon(android.R.drawable.ic_dialog_alert)
+                        .setNeutralButton(R.string.button_parseError, null);
+                AlertDialog alert = builder.create();
+                alert.show();
+            }
+        }
+        return d;
+    }
 
-    private class TapTypeArrayAdapter extends ArrayAdapter<TapType>{
+    private class TapTypeArrayAdapter extends ArrayAdapter<TapType> {
 
         public TapTypeArrayAdapter(Context context, int resource) {
             super(context, resource);
@@ -276,7 +276,7 @@ public class BpmMeterActivity extends InjectionAppCompatActivity {
 
             TapType item = getItem(position);
 
-            if(view instanceof TextView){
+            if (view instanceof TextView) {
                 TextView textView = (TextView) view;
 
                 textView.setText(getResources().getString(item.getPluralNameResId()));
@@ -284,19 +284,19 @@ public class BpmMeterActivity extends InjectionAppCompatActivity {
             return view;
         }
 
-		@Override
-		public View getDropDownView(int position, View convertView, ViewGroup parent) {
-			View view = super.getDropDownView(position, convertView, parent);
+        @Override
+        public View getDropDownView(int position, View convertView, ViewGroup parent) {
+            View view = super.getDropDownView(position, convertView, parent);
 
-			TapType item = getItem(position);
+            TapType item = getItem(position);
 
-			if(view instanceof TextView){
-				TextView textView = (TextView) view;
+            if (view instanceof TextView) {
+                TextView textView = (TextView) view;
 
-				textView.setText(getResources().getString(item.getPluralNameResId()));
-			}
+                textView.setText(getResources().getString(item.getPluralNameResId()));
+            }
 
-			return view;
-		}
-	}
+            return view;
+        }
+    }
 }

@@ -7,9 +7,6 @@ import de.larsgrefer.bpm_meter.BuildConfig;
 import de.larsgrefer.bpm_meter.R;
 import io.freefair.android.appcompatPreference.AppCompatPreferenceActivity;
 
-/**
- * Created by larsgrefer on 27.10.15.
- */
 public class SettingsActivity extends AppCompatPreferenceActivity {
 
 	@Override
