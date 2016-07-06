@@ -1,5 +1,7 @@
 package de.larsgrefer.bpm_meter;
 
+import android.support.annotation.Keep;
+
 import java.util.LinkedList;
 import java.util.List;
 import java.util.ListIterator;
@@ -14,6 +16,7 @@ public class BpmMeter {
     private double measuresPerMinute;
     private double measureDuration;
 
+    @Keep
     public BpmMeter() {
         measureType = MeasureType.MT4_4;
         tapType = TapType.MEASURES;
