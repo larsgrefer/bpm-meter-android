@@ -1,5 +1,8 @@
 package de.larsgrefer.bpm_meter;
 
+import lombok.Getter;
+
+@Getter
 public enum MeasureType {
 
 	MT4_4(4, "4/4"),
@@ -12,10 +15,6 @@ public enum MeasureType {
 	MeasureType(int beatsPerMeasure, String name) {
 		this.beatsPerMeasure = beatsPerMeasure;
 		this.displayName = name;
-	}
-
-	public int getBeatsPerMeasure() {
-		return beatsPerMeasure;
 	}
 
 	@Override

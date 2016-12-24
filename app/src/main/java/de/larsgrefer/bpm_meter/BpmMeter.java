@@ -6,10 +6,15 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.ListIterator;
 
+import lombok.Getter;
+import lombok.Setter;
+
+@Getter
+@Setter
 public class BpmMeter {
     private TapType tapType;
     private MeasureType measureType;
-    private LinkedList<Long> taps;
+    private final LinkedList<Long> taps = new LinkedList<>();
 
     private double beatsPerMinute;
     private double beatDuration;
@@ -20,8 +25,6 @@ public class BpmMeter {
     public BpmMeter() {
         measureType = MeasureType.MT4_4;
         tapType = TapType.MEASURES;
-
-        taps = new LinkedList<>();
     }
 
     public void tap() {
@@ -71,7 +74,7 @@ public class BpmMeter {
         update();
     }
 
-    void update() {
+    private void update() {
 
         double delta = getAverageDelta();
 
@@ -86,35 +89,11 @@ public class BpmMeter {
 
     }
 
-    public TapType getTapType() {
-        return tapType;
-    }
-
-    public void setTapType(TapType tapType) {
-        this.tapType = tapType;
-    }
-
-    public MeasureType getMeasureType() {
-        return measureType;
-    }
-
-    public void setMeasureType(MeasureType measureType) {
-        this.measureType = measureType;
-    }
-
-    public double getBeatsPerMinute() {
-        return beatsPerMinute;
-    }
-
     public void setBeatsPerMinute(double bpm) {
         beatsPerMinute = bpm;
         beatDuration = BPM.durationFromXpm(bpm);
         measuresPerMinute = bpm / measureType.getBeatsPerMeasure();
         measureDuration = getBeatDuration() * measureType.getBeatsPerMeasure();
-    }
-
-    public double getBeatDuration() {
-        return beatDuration;
     }
 
     public void setBeatDuration(double duration) {
@@ -124,19 +103,11 @@ public class BpmMeter {
         measuresPerMinute = getBeatsPerMinute() / measureType.getBeatsPerMeasure();
     }
 
-    public double getMeasuresPerMinute() {
-        return measuresPerMinute;
-    }
-
     public void setMeasuresPerMinute(double mpm) {
         measuresPerMinute = mpm;
         measureDuration = BPM.durationFromXpm(mpm);
         beatDuration = getMeasureDuration() / measureType.getBeatsPerMeasure();
         beatsPerMinute = mpm * measureType.getBeatsPerMeasure();
-    }
-
-    public double getMeasureDuration() {
-        return measureDuration;
     }
 
     public void setMeasureDuration(double duration) {

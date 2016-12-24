@@ -5,6 +5,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
 import android.support.design.widget.FloatingActionButton;
 import android.text.SpannableStringBuilder;
 import android.text.style.AbsoluteSizeSpan;
@@ -45,31 +46,31 @@ import static io.freefair.android.injection.annotation.AttributeType.COLOR;
 public class BpmMeterActivity extends InjectionAppCompatActivity {
 
     @Inject
-    BpmMeter bpmMeter;
+    private BpmMeter bpmMeter;
 
     @InjectView(R.id.button_tap)
-    Button tapButton;
+    private Button tapButton;
 
     @InjectView(R.id.text_beats_per_minute)
-    EditText beatsPerMinuteText;
+    private EditText beatsPerMinuteText;
 
     @InjectView(R.id.text_beat_duration)
-    EditText beatDurationText;
+    private EditText beatDurationText;
 
     @InjectView(R.id.text_measures_per_minute)
-    EditText measuresPerMinuteText;
+    private EditText measuresPerMinuteText;
 
     @InjectView(R.id.text_measure_duration)
-    EditText measureDurationText;
+    private EditText measureDurationText;
 
     @InjectView(R.id.spinner_measure_type)
-    Spinner measureTypeSpinner;
+    private Spinner measureTypeSpinner;
 
     @InjectView(R.id.spinner_tap_type)
-    Spinner tapTypeSpinner;
+    private Spinner tapTypeSpinner;
 
     @InjectView(R.id.floating_action_button)
-    FloatingActionButton fab;
+    private FloatingActionButton fab;
 
     /**
      * Called when the activity is first created.
@@ -169,7 +170,7 @@ public class BpmMeterActivity extends InjectionAppCompatActivity {
     }
 
     @InjectAttribute(id = android.R.attr.textColorHint, type = COLOR)
-    int textColorHint;
+    private int textColorHint;
 
     public void updateButtonText() {
 
@@ -270,8 +271,9 @@ public class BpmMeterActivity extends InjectionAppCompatActivity {
             super(context, resource, textViewResourceId, objects);
         }
 
+        @NonNull
         @Override
-        public View getView(int position, View convertView, ViewGroup parent) {
+        public View getView(int position, View convertView, @NonNull ViewGroup parent) {
             View view = super.getView(position, convertView, parent);
 
             TapType item = getItem(position);
@@ -285,7 +287,7 @@ public class BpmMeterActivity extends InjectionAppCompatActivity {
         }
 
         @Override
-        public View getDropDownView(int position, View convertView, ViewGroup parent) {
+        public View getDropDownView(int position, View convertView, @NonNull ViewGroup parent) {
             View view = super.getDropDownView(position, convertView, parent);
 
             TapType item = getItem(position);
