@@ -1,5 +1,6 @@
 apply plugin: 'com.android.application'
 apply plugin: 'com.github.triplet.play'
+apply plugin: 'io.freefair.android-ci'
 
 def tempVersion = 'git describe --abbrev=0 --tags'.execute([],rootProject.projectDir).text.trim()
 

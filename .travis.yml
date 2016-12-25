@@ -3,12 +3,12 @@ sudo: false
 jdk: oraclejdk8
 android:
   components:
+  - tools
   - platform-tools
   - build-tools-25.0.2
   - android-25
   - extra-android-m2repository
 script: './gradlew build check'
-after_failure: 'cat app/build/outputs/lint-results.xml'
 before_install:
 - openssl aes-256-cbc -K $encrypted_69044bd0f1e4_key -iv $encrypted_69044bd0f1e4_iv -in secrets.tar.enc -out secrets.tar -d
 - tar xvf secrets.tar
