@@ -10,7 +10,7 @@
     style="?borderlessButtonStyle"
     tools:showIn="@layout/include_content"
     android:textAppearance="@style/TextAppearance.AppCompat.Large"
-    android:textSize="100sp"
+    android:textSize="@dimen/button_text_size"
     >
 
     <requestFocus/>

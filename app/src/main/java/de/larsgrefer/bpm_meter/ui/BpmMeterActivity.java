@@ -8,8 +8,8 @@ import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.FloatingActionButton;
 import android.text.SpannableStringBuilder;
-import android.text.style.AbsoluteSizeSpan;
 import android.text.style.ForegroundColorSpan;
+import android.text.style.RelativeSizeSpan;
 import android.view.KeyEvent;
 import android.view.Menu;
 import android.view.View;
@@ -174,9 +174,8 @@ public class BpmMeterActivity extends InjectionAppCompatActivity {
 
     public void updateButtonText() {
 
-        AbsoluteSizeSpan ass1 = new AbsoluteSizeSpan(100, true);
-        AbsoluteSizeSpan ass2 = new AbsoluteSizeSpan(22, true);
-        ForegroundColorSpan fcs2 = new ForegroundColorSpan(textColorHint);
+        RelativeSizeSpan sizeSpan = new RelativeSizeSpan(0.25f);
+        ForegroundColorSpan colorSpan = new ForegroundColorSpan(textColorHint);
 
         SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder();
 
@@ -184,12 +183,10 @@ public class BpmMeterActivity extends InjectionAppCompatActivity {
         String line2 = getResources().getString(R.string.once_per, getResources().getString(bpmMeter.getTapType().getSingularNameResId()));
 
         spannableStringBuilder.append(line1);
-        spannableStringBuilder.setSpan(ass1, 0, line1.length(), 0);
         spannableStringBuilder.append("\n");
         spannableStringBuilder.append(line2);
-        spannableStringBuilder.setSpan(ass2, line1.length() + 1, line1.length() + 1 + line2.length(), 0);
-        spannableStringBuilder.setSpan(fcs2, line1.length() + 1, line1.length() + 1 + line2.length(), 0);
-
+        spannableStringBuilder.setSpan(sizeSpan, line1.length() + 1, line1.length() + 1 + line2.length(), 0);
+        spannableStringBuilder.setSpan(colorSpan, line1.length() + 1, line1.length() + 1 + line2.length(), 0);
 
         tapButton.setText(spannableStringBuilder);
     }
@@ -281,7 +278,9 @@ public class BpmMeterActivity extends InjectionAppCompatActivity {
             if (view instanceof TextView) {
                 TextView textView = (TextView) view;
 
-                textView.setText(getResources().getString(item.getPluralNameResId()));
+                if (item != null) {
+                    textView.setText(getResources().getString(item.getPluralNameResId()));
+                }
             }
             return view;
         }
@@ -295,7 +294,9 @@ public class BpmMeterActivity extends InjectionAppCompatActivity {
             if (view instanceof TextView) {
                 TextView textView = (TextView) view;
 
-                textView.setText(getResources().getString(item.getPluralNameResId()));
+                if (item != null) {
+                    textView.setText(getResources().getString(item.getPluralNameResId()));
+                }
             }
 
             return view;

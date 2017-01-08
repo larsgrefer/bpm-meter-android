@@ -22,7 +22,7 @@ android {
     defaultConfig {
         applicationId "com.larsgrefer.bpmMeter"
         minSdkVersion 9
-        targetSdkVersion 23
+        targetSdkVersion 24
         versionCode 14
         versionName tempVersion
     }
