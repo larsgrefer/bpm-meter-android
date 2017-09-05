@@ -18,11 +18,11 @@ android {
         }
     }
     compileSdkVersion 25
-    buildToolsVersion '25.0.2'
+    buildToolsVersion '25.0.3'
     defaultConfig {
         applicationId "com.larsgrefer.bpmMeter"
         minSdkVersion 9
-        targetSdkVersion 24
+        targetSdkVersion 25
         versionCode 14
         versionName tempVersion
     }
@@ -46,10 +46,10 @@ play {
 }
 
 dependencies {
-    compile 'com.android.support:design:25.1.0'
+    compile 'com.android.support:design:25.3.1'
     compile 'io.freefair.android-colors:material:1.2.0'
     compile 'io.freefair.android-library:appcompat-preference:1.0.0-rc1'
     compile 'io.freefair.android-injection:injection:2.0.0-beta1'
 
-    provided "org.projectlombok:lombok:1.16.12"
+    provided "org.projectlombok:lombok:1.16.16"
 }
