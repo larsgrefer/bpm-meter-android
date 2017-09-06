@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">BPM-Meter</string>
+    <string name="about">이 앱 정보</string>
+    <string name="action_github_long">GitHub에서보기</string>
+    <string name="version">버전</string>
+</resources>

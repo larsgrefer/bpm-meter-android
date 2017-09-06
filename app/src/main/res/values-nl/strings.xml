@@ -14,6 +14,6 @@
     <string name="label_measure_duration">sec</string>
     <string name="once_per">Eenmaal per %s</string>
     <string name="about">Over</string>
-    <string name="action_github_long"> Bekijk op GitHub</string>
+    <string name="action_github_long">Bekijk op GitHub</string>
     <string name="message_parseError">Fout bij het lezen van het aantal</string>
 </resources>

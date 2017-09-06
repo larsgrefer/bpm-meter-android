@@ -10,4 +10,7 @@
     <string name="measures">Mesures</string>
     <string name="once_per">Une fois par %s</string>
     <string name="about">Sur</string>
+    <string name="version">Version</string>
+    <string name="settings">Paramètres</string>
+    <string name="reset">Remettre</string>
 </resources>

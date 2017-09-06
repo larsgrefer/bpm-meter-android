@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">BPM-Meter</string>
+    <string name="measure">Такт</string>
+    <string name="settings">настройки</string>
+    <string name="version">версия</string>
+    <string name="beat">Доля</string>
+    <string name="action_github_long">Просмотр на GitHub</string>
+    <string name="about">Об этом приложении</string>
+    <string name="once_per">Odin raz za %s</string>
+</resources>

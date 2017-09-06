@@ -19,7 +19,6 @@
     <string name="about">About this App</string>
     <string name="reset">Reset</string>
 
-    <string name="about_message" translatable="false">© Lars Grefer</string>
     <string name="action_github" translatable="false" translateable="false">GitHub</string>
     <string name="action_github_long">View on GitHub</string>
     <string name="once_per">Once per %s</string>
