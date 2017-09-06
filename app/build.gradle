@@ -1,6 +1,7 @@
 apply plugin: 'com.android.application'
 apply plugin: 'com.github.triplet.play'
 apply plugin: 'io.freefair.android-ci'
+apply plugin: 'io.fabric'
 
 def tempVersion = 'git describe --abbrev=0 --tags'.execute([],rootProject.projectDir).text.trim()
 
@@ -32,6 +33,9 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
             signingConfig signingConfigs.releaseSigningConfig
         }
+        debug {
+            ext.enableCrashlytics = false
+        }
     }
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_7
@@ -51,5 +55,9 @@ dependencies {
     compile 'io.freefair.android-library:appcompat-preference:1.0.0-rc1'
     compile 'io.freefair:android-injection:3.0.0-beta2'
 
-    provided "org.projectlombok:lombok:1.16.16"
+    compile('com.crashlytics.sdk.android:crashlytics:2.6.8@aar') {
+        transitive = true;
+    }
+
+    provided "org.projectlombok:lombok:1.16.18"
 }
