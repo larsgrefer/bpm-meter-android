@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">BPM-Meter</string>
+    <string name="measure">Takt</string>
+    <string name="beat">taktslag</string>
+    <string name="beats">Taktslag</string>
+    <string name="settings">inställningar</string>
+    <string name="version">version</string>
+    <string name="about">Om den här appen</string>
+    <string name="action_github_long">Visa på GitHub</string>
+    <string name="label_measures_per_minute">TpM</string>
+    <string name="once_per">En gång per %s</string>
+</resources>
