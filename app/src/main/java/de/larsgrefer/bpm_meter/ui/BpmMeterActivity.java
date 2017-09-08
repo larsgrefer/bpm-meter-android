@@ -48,8 +48,7 @@ import static io.freefair.android.injection.annotation.AttributeType.COLOR;
 @XmlMenu(R.menu.menu)
 public class BpmMeterActivity extends InjectionAppCompatActivity {
 
-    @Inject
-    private BpmMeter bpmMeter;
+    private BpmMeter bpmMeter = new BpmMeter();
 
     @InjectView(R.id.button_tap)
     private Button tapButton;

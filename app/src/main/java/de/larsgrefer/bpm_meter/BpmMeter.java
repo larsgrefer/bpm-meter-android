@@ -24,7 +24,6 @@ public class BpmMeter {
     private double measuresPerMinute;
     private double measureDuration;
 
-    @Keep
     public BpmMeter() {
         measureType = MeasureType.MT4_4;
         tapType = TapType.MEASURES;
