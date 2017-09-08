@@ -22,7 +22,7 @@ android {
         applicationId "com.larsgrefer.bpmMeter"
         minSdkVersion 9
         targetSdkVersion 25
-        versionCode 15
+        versionCode 16
         versionName version
     }
     buildTypes {
