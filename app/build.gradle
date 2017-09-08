@@ -5,11 +5,7 @@ apply plugin: 'io.freefair.android-pmd'
 apply plugin: 'io.freefair.android-checkstyle'
 apply plugin: 'io.fabric'
 
-def tempVersion = 'git describe --abbrev=0 --tags'.execute([],rootProject.projectDir).text.trim()
-
-if(hasProperty('version') && !'unspecified'.equals(version)) {
-    tempVersion = version
-}
+version = "3.3.0"
 
 android {
     signingConfigs {
@@ -27,7 +23,7 @@ android {
         minSdkVersion 9
         targetSdkVersion 25
         versionCode 15
-        versionName tempVersion
+        versionName version
     }
     buildTypes {
         release {
