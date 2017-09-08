@@ -2,23 +2,26 @@ package de.larsgrefer.bpm_meter;
 
 import lombok.Getter;
 
+/**
+ * @author Lars Grefer
+ */
 @Getter
 public enum MeasureType {
 
-	MT4_4(4, "4/4"),
-	MT3_4(3, "3/4"),
-	MT2_4(2, "2/4");
+    MT4_4(4, "4/4"),
+    MT3_4(3, "3/4"),
+    MT2_4(2, "2/4");
 
-	private int beatsPerMeasure;
-	private String displayName;
+    private int beatsPerMeasure;
+    private String displayName;
 
-	MeasureType(int beatsPerMeasure, String name) {
-		this.beatsPerMeasure = beatsPerMeasure;
-		this.displayName = name;
-	}
+    MeasureType(int beatsPerMeasure, String name) {
+        this.beatsPerMeasure = beatsPerMeasure;
+        this.displayName = name;
+    }
 
-	@Override
-	public String toString() {
-		return displayName;
-	}
+    @Override
+    public String toString() {
+        return displayName;
+    }
 }

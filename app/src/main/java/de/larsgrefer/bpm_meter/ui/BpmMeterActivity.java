@@ -41,6 +41,9 @@ import io.freefair.android.injection.app.InjectionAppCompatActivity;
 
 import static io.freefair.android.injection.annotation.AttributeType.COLOR;
 
+/**
+ * @author Lars Grefer
+ */
 @XmlLayout(R.layout.main)
 @XmlMenu(R.menu.menu)
 public class BpmMeterActivity extends InjectionAppCompatActivity {
@@ -204,8 +207,8 @@ public class BpmMeterActivity extends InjectionAppCompatActivity {
         return true;
     }
 
-    DecimalFormat xpmDecimalFormat = new DecimalFormat("0.##");
-    DecimalFormat xdDecimalFormat = new DecimalFormat("0.#####");
+    private DecimalFormat xpmDecimalFormat = new DecimalFormat("0.##");
+    private DecimalFormat xdDecimalFormat = new DecimalFormat("0.#####");
 
     public void update() {
 
@@ -244,27 +247,27 @@ public class BpmMeterActivity extends InjectionAppCompatActivity {
 
     private class TapTypeArrayAdapter extends ArrayAdapter<TapType> {
 
-        public TapTypeArrayAdapter(Context context, int resource) {
+        TapTypeArrayAdapter(Context context, int resource) {
             super(context, resource);
         }
 
-        public TapTypeArrayAdapter(Context context, int resource, int textViewResourceId) {
+        TapTypeArrayAdapter(Context context, int resource, int textViewResourceId) {
             super(context, resource, textViewResourceId);
         }
 
-        public TapTypeArrayAdapter(Context context, int resource, TapType[] objects) {
+        TapTypeArrayAdapter(Context context, int resource, TapType[] objects) {
             super(context, resource, objects);
         }
 
-        public TapTypeArrayAdapter(Context context, int resource, int textViewResourceId, TapType[] objects) {
+        TapTypeArrayAdapter(Context context, int resource, int textViewResourceId, TapType[] objects) {
             super(context, resource, textViewResourceId, objects);
         }
 
-        public TapTypeArrayAdapter(Context context, int resource, List<TapType> objects) {
+        TapTypeArrayAdapter(Context context, int resource, List<TapType> objects) {
             super(context, resource, objects);
         }
 
-        public TapTypeArrayAdapter(Context context, int resource, int textViewResourceId, List<TapType> objects) {
+        TapTypeArrayAdapter(Context context, int resource, int textViewResourceId, List<TapType> objects) {
             super(context, resource, textViewResourceId, objects);
         }
 

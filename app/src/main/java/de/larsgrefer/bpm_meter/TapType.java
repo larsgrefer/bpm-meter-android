@@ -2,6 +2,9 @@ package de.larsgrefer.bpm_meter;
 
 import android.support.annotation.StringRes;
 
+/**
+ * @author Lars Grefer
+ */
 public enum TapType {
     BEATS(R.string.beat, R.string.beats),
     MEASURES(R.string.measure, R.string.measures);

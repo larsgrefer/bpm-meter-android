@@ -9,6 +9,9 @@ import java.util.ListIterator;
 import lombok.Getter;
 import lombok.Setter;
 
+/**
+ * @author Lars Grefer
+ */
 @Getter
 @Setter
 public class BpmMeter {
@@ -34,9 +37,9 @@ public class BpmMeter {
     }
 
     private List<Double> getDeltaList() {
-        if (taps.isEmpty())
+        if (taps.isEmpty()) {
             return null;
-        else {
+        } else {
             LinkedList<Double> deltaList = new LinkedList<>();
 
             long lastTap = taps.getFirst();
@@ -54,11 +57,11 @@ public class BpmMeter {
 
     private double getAverageDelta() {
         List<Double> deltaList = getDeltaList();
-        if (deltaList == null)
+        if (deltaList == null) {
             return 0;
-        else if (deltaList.isEmpty())
+        } else if (deltaList.isEmpty()) {
             return Double.POSITIVE_INFINITY;
-        else {
+        } else {
             double sum = 0;
             int count = 0;
             for (double delta : deltaList) {
@@ -85,6 +88,8 @@ public class BpmMeter {
             case MEASURES:
                 setMeasureDuration(delta);
                 break;
+            default:
+                throw new IllegalStateException();
         }
 
     }
