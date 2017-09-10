@@ -1,7 +1,5 @@
 package de.larsgrefer.bpm_meter;
 
-import android.support.annotation.Keep;
-
 import java.util.LinkedList;
 import java.util.List;
 import java.util.ListIterator;

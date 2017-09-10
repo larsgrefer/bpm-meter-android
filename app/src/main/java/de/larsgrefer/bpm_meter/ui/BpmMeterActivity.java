@@ -32,7 +32,6 @@ import de.larsgrefer.bpm_meter.BpmMeter;
 import de.larsgrefer.bpm_meter.MeasureType;
 import de.larsgrefer.bpm_meter.R;
 import de.larsgrefer.bpm_meter.TapType;
-import io.freefair.android.injection.annotation.Inject;
 import io.freefair.android.injection.annotation.InjectAttribute;
 import io.freefair.android.injection.annotation.InjectView;
 import io.freefair.android.injection.annotation.XmlLayout;
