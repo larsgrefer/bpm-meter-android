@@ -4,7 +4,6 @@
     package="de.larsgrefer.bpm_meter" >
 
     <application
-        android:name=".BpmMeterApplication"
         android:allowBackup="true"
         android:enabled="true"
         android:icon="@mipmap/icon"

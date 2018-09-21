@@ -2,15 +2,14 @@
 
 buildscript {
     repositories {
-        jcenter()
-        maven { url 'https://maven.fabric.io/public' }
+        google()
         maven { url "https://plugins.gradle.org/m2/" }
+        jcenter()
     }
     dependencies {
-        classpath 'com.android.tools.build:gradle:2.3.3'
-        classpath 'com.github.triplet.gradle:play-publisher:1.2.0'
-        classpath "io.freefair.gradle:android-gradle-plugins:2.3.1"
-        classpath 'io.fabric.tools:gradle:1.+'
+        classpath 'com.android.tools.build:gradle:3.1.4'
+        classpath 'com.github.triplet.gradle:play-publisher:1.2.2'
+        classpath "io.freefair.gradle:android-gradle-plugins:3.1.1"
 
         // NOTE: Do not place your application dependencies here; they belong
         // in the individual module build.gradle files
@@ -19,8 +18,8 @@ buildscript {
 
 allprojects {
     repositories {
+        google()
         jcenter()
-        maven { url 'https://maven.fabric.io/public' }
         maven { url "https://jitpack.io" }
     }
 }

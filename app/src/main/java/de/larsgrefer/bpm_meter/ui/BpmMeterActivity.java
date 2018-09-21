@@ -10,11 +10,8 @@ import android.support.design.widget.FloatingActionButton;
 import android.text.SpannableStringBuilder;
 import android.text.style.ForegroundColorSpan;
 import android.text.style.RelativeSizeSpan;
-import android.view.KeyEvent;
 import android.view.Menu;
 import android.view.View;
-import android.view.View.OnClickListener;
-import android.view.View.OnLongClickListener;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -22,7 +19,6 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.TextView;
-import android.widget.TextView.OnEditorActionListener;
 
 import java.text.DecimalFormat;
 import java.text.ParseException;
@@ -80,27 +76,18 @@ public class BpmMeterActivity extends InjectionAppCompatActivity {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        tapButton.setOnClickListener(new OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                bpmMeter.tap();
-                update();
-            }
+        tapButton.setOnClickListener(v -> {
+            bpmMeter.tap();
+            update();
         });
-        tapButton.setOnLongClickListener(new OnLongClickListener() {
-            @Override
-            public boolean onLongClick(View v) {
-                bpmMeter.reset();
-                update();
-                return true;
-            }
+        tapButton.setOnLongClickListener(v -> {
+            bpmMeter.reset();
+            update();
+            return true;
         });
-        fab.setOnClickListener(new OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                bpmMeter.reset();
-                update();
-            }
+        fab.setOnClickListener(v -> {
+            bpmMeter.reset();
+            update();
         });
         ArrayAdapter<MeasureType> measureTypeArrayAdapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_item, MeasureType.values());
         measureTypeArrayAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
@@ -133,39 +120,27 @@ public class BpmMeterActivity extends InjectionAppCompatActivity {
 
             }
         });
-        beatsPerMinuteText.setOnEditorActionListener(new OnEditorActionListener() {
-            @Override
-            public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
-                bpmMeter.setBeatsPerMinute(getDoubleFromTextView(v));
-                update();
-                return true;
-            }
+        beatsPerMinuteText.setOnEditorActionListener((v, actionId, event) -> {
+            bpmMeter.setBeatsPerMinute(getDoubleFromTextView(v));
+            update();
+            return true;
         });
-        measuresPerMinuteText.setOnEditorActionListener(new OnEditorActionListener() {
-            @Override
-            public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
-                bpmMeter.setMeasuresPerMinute(getDoubleFromTextView(v));
-                update();
-                return true;
-            }
+        measuresPerMinuteText.setOnEditorActionListener((v, actionId, event) -> {
+            bpmMeter.setMeasuresPerMinute(getDoubleFromTextView(v));
+            update();
+            return true;
         });
-        beatDurationText.setOnEditorActionListener(new OnEditorActionListener() {
-            @Override
-            public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
-                tapTypeSpinner.setSelection(1, true);
-                bpmMeter.setBeatDuration(getDoubleFromTextView(v));
-                update();
-                return true;
-            }
+        beatDurationText.setOnEditorActionListener((v, actionId, event) -> {
+            tapTypeSpinner.setSelection(1, true);
+            bpmMeter.setBeatDuration(getDoubleFromTextView(v));
+            update();
+            return true;
         });
-        measureDurationText.setOnEditorActionListener(new OnEditorActionListener() {
-            @Override
-            public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
-                measureTypeSpinner.setSelection(0, true);
-                bpmMeter.setMeasureDuration(getDoubleFromTextView(v));
-                update();
-                return true;
-            }
+        measureDurationText.setOnEditorActionListener((v, actionId, event) -> {
+            measureTypeSpinner.setSelection(0, true);
+            bpmMeter.setMeasureDuration(getDoubleFromTextView(v));
+            update();
+            return true;
         });
 
     }

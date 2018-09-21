@@ -3,9 +3,8 @@ apply plugin: 'com.github.triplet.play'
 apply plugin: 'io.freefair.android-ci'
 apply plugin: 'io.freefair.android-pmd'
 apply plugin: 'io.freefair.android-checkstyle'
-apply plugin: 'io.fabric'
 
-version = "3.3.0"
+version = "3.4.0"
 
 android {
     signingConfigs {
@@ -16,13 +15,12 @@ android {
             storePassword bpm_meter_android_keystore_password
         }
     }
-    compileSdkVersion 25
-    buildToolsVersion '25.0.3'
+    compileSdkVersion 27
     defaultConfig {
         applicationId "com.larsgrefer.bpmMeter"
-        minSdkVersion 9
-        targetSdkVersion 25
-        versionCode 16
+        minSdkVersion 14
+        targetSdkVersion 27
+        versionCode 17
         versionName version
     }
     buildTypes {
@@ -31,13 +29,10 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
             signingConfig signingConfigs.releaseSigningConfig
         }
-        debug {
-            ext.enableCrashlytics = false
-        }
     }
     compileOptions {
-        sourceCompatibility JavaVersion.VERSION_1_7
-        targetCompatibility JavaVersion.VERSION_1_7
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
     }
 }
 
@@ -48,14 +43,11 @@ play {
 }
 
 dependencies {
-    compile 'com.android.support:design:25.3.1'
-    compile 'io.freefair.android-colors:material:1.2.0'
-    compile 'io.freefair.android-library:appcompat-preference:1.0.0-rc1'
-    compile 'io.freefair:android-injection:3.0.0'
+    implementation 'com.android.support:design:27.1.1'
+    implementation 'io.freefair.android-colors:material:1.2.0'
+    implementation 'io.freefair.android-library:appcompat-preference:1.0.0-rc1'
+    implementation 'io.freefair:android-injection:3.1.1'
 
-    compile('com.crashlytics.sdk.android:crashlytics:2.6.8@aar') {
-        transitive = true;
-    }
-
-    provided "org.projectlombok:lombok:1.16.18"
+    annotationProcessor "org.projectlombok:lombok:1.16.20"
+    compileOnly "org.projectlombok:lombok:1.16.20"
 }
