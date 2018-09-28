@@ -15,11 +15,11 @@ android {
             storePassword bpm_meter_android_keystore_password
         }
     }
-    compileSdkVersion 27
+    compileSdkVersion 28
     defaultConfig {
         applicationId "com.larsgrefer.bpmMeter"
         minSdkVersion 14
-        targetSdkVersion 27
+        targetSdkVersion 28
         versionCode 17
         versionName version
     }
@@ -43,7 +43,7 @@ play {
 }
 
 dependencies {
-    implementation 'com.android.support:design:27.1.1'
+    implementation 'com.android.support:design:28.0.0'
     implementation 'io.freefair.android-colors:material:1.2.0'
     implementation 'io.freefair.android-library:appcompat-preference:1.0.0-rc1'
     implementation 'io.freefair:android-injection:3.1.1'
