@@ -4,7 +4,7 @@ apply plugin: 'io.freefair.android-ci'
 apply plugin: 'io.freefair.android-pmd'
 apply plugin: 'io.freefair.android-checkstyle'
 
-version = "3.4.0"
+version = "3.5.0"
 
 android {
     signingConfigs {
@@ -20,7 +20,7 @@ android {
         applicationId "com.larsgrefer.bpmMeter"
         minSdkVersion 14
         targetSdkVersion 28
-        versionCode 17
+        versionCode 18
         versionName version
     }
     buildTypes {
@@ -37,8 +37,7 @@ android {
 }
 
 play {
-    jsonFile = new File('playstore-apikey.json');
-    uploadImages = true
+    serviceAccountCredentials = rootProject.file('playstore-apikey.json')
     track = 'beta'
 }
 
