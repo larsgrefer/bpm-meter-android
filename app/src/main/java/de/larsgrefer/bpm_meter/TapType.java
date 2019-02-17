@@ -1,6 +1,6 @@
 package de.larsgrefer.bpm_meter;
 
-import android.support.annotation.StringRes;
+import androidx.annotation.StringRes;
 
 /**
  * @author Lars Grefer

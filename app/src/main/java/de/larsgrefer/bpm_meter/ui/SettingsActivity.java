@@ -1,24 +1,25 @@
 package de.larsgrefer.bpm_meter.ui;
 
 import android.os.Bundle;
-import android.preference.Preference;
 
-import de.larsgrefer.bpm_meter.BuildConfig;
+import androidx.appcompat.app.AppCompatActivity;
 import de.larsgrefer.bpm_meter.R;
-import io.freefair.android.appcompatPreference.AppCompatPreferenceActivity;
 
 /**
  * @author Lars Grefer
  */
-public class SettingsActivity extends AppCompatPreferenceActivity {
+public class SettingsActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        addPreferencesFromResource(R.xml.settings);
+        setContentView(R.layout.activity_settings);
 
-        Preference versionPreference = findPreference("pref_version");
-        versionPreference.setSummary(BuildConfig.VERSION_NAME + "\n" + BuildConfig.BUILD_TYPE);
+        getSupportFragmentManager()
+                .beginTransaction()
+                .replace(R.id.settings_container, new SettingsFragment())
+                .commit();
     }
+
 }

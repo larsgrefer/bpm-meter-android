@@ -3,10 +3,9 @@ package de.larsgrefer.bpm_meter.ui;
 import android.app.AlertDialog;
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.net.Uri;
 import android.os.Bundle;
-import android.support.annotation.NonNull;
-import android.support.design.widget.FloatingActionButton;
 import android.text.SpannableStringBuilder;
 import android.text.style.ForegroundColorSpan;
 import android.text.style.RelativeSizeSpan;
@@ -20,10 +19,14 @@ import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.TextView;
 
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
+
 import java.text.DecimalFormat;
 import java.text.ParseException;
 import java.util.List;
 
+import androidx.annotation.NonNull;
+import androidx.preference.PreferenceManager;
 import de.larsgrefer.bpm_meter.BpmMeter;
 import de.larsgrefer.bpm_meter.MeasureType;
 import de.larsgrefer.bpm_meter.R;
@@ -186,6 +189,10 @@ public class BpmMeterActivity extends InjectionAppCompatActivity {
     public void update() {
 
         updateButtonText();
+
+        SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(this);
+        int fractionDigits = preferences.getInt("fractionDigits", 1);
+        xpmDecimalFormat.setMaximumFractionDigits(fractionDigits);
 
         beatsPerMinuteText.setText(xpmDecimalFormat.format(bpmMeter.getBeatsPerMinute()));
         measuresPerMinuteText.setText(xpmDecimalFormat.format(bpmMeter.getMeasuresPerMinute()));

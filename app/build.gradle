@@ -47,6 +47,8 @@ dependencies {
     implementation 'io.freefair.android-library:appcompat-preference:1.0.0-rc1'
     implementation 'io.freefair:android-injection:3.1.1'
 
-    annotationProcessor "org.projectlombok:lombok:1.16.20"
-    compileOnly "org.projectlombok:lombok:1.16.20"
+    implementation 'androidx.preference:preference:1.0.0'
+
+    annotationProcessor "org.projectlombok:lombok:1.18.4"
+    compileOnly "org.projectlombok:lombok:1.18.4"
 }

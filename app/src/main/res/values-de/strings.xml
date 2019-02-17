@@ -23,5 +23,7 @@
     <string name="settings">Einstellungen</string>
     <string name="version">Version</string>
     <string name="report_a_bug">Einen Fehler melden</string>
+    <string name="display">Anzeige</string>
+    <string name="fractionDigits">Nachkommastellen</string>
 
 </resources>

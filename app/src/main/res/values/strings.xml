@@ -30,4 +30,6 @@
     <string name="version">Version</string>
     <string name="settings">Settings</string>
     <string name="report_a_bug">Report a Bug</string>
+    <string name="display">Anzeige</string>
+    <string name="fractionDigits">Fraction digits</string>
 </resources>

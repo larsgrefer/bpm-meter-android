@@ -60,12 +60,10 @@ public class BpmMeter {
             return Double.POSITIVE_INFINITY;
         } else {
             double sum = 0;
-            int count = 0;
             for (double delta : deltaList) {
                 sum += delta;
-                count++;
             }
-            return sum / (double) count;
+            return sum / (double) deltaList.size();
         }
     }
 
