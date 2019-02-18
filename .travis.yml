@@ -1,13 +1,12 @@
 language: android
 sudo: false
-jdk: oraclejdk8
+jdk: openjdk8
 android:
   components:
   - tools
   - platform-tools
-  - build-tools-25.0.3
-  - android-25
-  - extra-android-m2repository
+  - build-tools-28.0.3
+  - android-28
 script: './gradlew build check'
 before_install:
 - openssl aes-256-cbc -K $encrypted_69044bd0f1e4_key -iv $encrypted_69044bd0f1e4_iv -in secrets.tar.enc -out secrets.tar -d
