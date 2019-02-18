@@ -13,4 +13,6 @@
     <string name="version">Version</string>
     <string name="settings">Paramètres</string>
     <string name="reset">Remettre</string>
+    <string name="fractionDigits">Décimales</string>
+    <string name="report_a_bug">Signaler un bug</string>
 </resources>

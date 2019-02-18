@@ -4,4 +4,5 @@
     <string name="about">이 앱 정보</string>
     <string name="action_github_long">GitHub에서보기</string>
     <string name="version">버전</string>
+    <string name="report_a_bug">버그보고</string>
 </resources>

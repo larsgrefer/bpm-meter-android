@@ -9,4 +9,5 @@
     <string name="about">Об этом приложении</string>
     <string name="once_per">Odin raz za %s</string>
     <string name="label_measures_per_minute">TpM</string>
+    <string name="report_a_bug">Сообщить об ошибке</string>
 </resources>

@@ -7,6 +7,9 @@ import androidx.preference.Preference;
 import de.larsgrefer.bpm_meter.BuildConfig;
 import de.larsgrefer.bpm_meter.R;
 
+/**
+ * @author Lars Grefer
+ */
 public class SettingsFragment extends androidx.preference.PreferenceFragmentCompat {
     @Override
     public void onCreatePreferences(Bundle savedInstanceState, String rootKey) {

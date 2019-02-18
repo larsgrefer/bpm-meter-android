@@ -16,4 +16,6 @@
     <string name="about">Over</string>
     <string name="action_github_long">Bekijk op GitHub</string>
     <string name="message_parseError">Fout bij het lezen van het aantal</string>
+    <string name="fractionDigits">plaatsen na de komma</string>
+    <string name="report_a_bug">Meld een bug</string>
 </resources>
