@@ -4,6 +4,7 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.ListIterator;
 
+import androidx.annotation.Nullable;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -33,6 +34,7 @@ public class BpmMeter {
         update();
     }
 
+    @Nullable
     private List<Double> getDeltaList() {
         if (taps.isEmpty()) {
             return null;

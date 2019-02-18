@@ -1,5 +1,6 @@
 package de.larsgrefer.bpm_meter;
 
+import androidx.annotation.NonNull;
 import lombok.Getter;
 
 /**
@@ -13,14 +14,16 @@ public enum MeasureType {
     MT2_4(2, "2/4");
 
     private int beatsPerMeasure;
+    @NonNull
     private String displayName;
 
-    MeasureType(int beatsPerMeasure, String name) {
+    MeasureType(int beatsPerMeasure, @NonNull String name) {
         this.beatsPerMeasure = beatsPerMeasure;
         this.displayName = name;
     }
 
     @Override
+    @NonNull
     public String toString() {
         return displayName;
     }
