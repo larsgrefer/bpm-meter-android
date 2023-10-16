@@ -6,7 +6,7 @@ plugins {
 apply plugin: 'com.github.triplet.play'
 apply plugin: 'io.freefair.android-ci'
 
-version = "3.6.0"
+version = "3.7.0"
 
 android {
     namespace "de.larsgrefer.bpm_meter"
@@ -28,7 +28,7 @@ android {
         applicationId "com.larsgrefer.bpmMeter"
         minSdkVersion 14
         targetSdkVersion 34
-        versionCode 19
+        versionCode 21
         versionName version
     }
     buildTypes {
