@@ -4,11 +4,13 @@ import android.app.AlertDialog;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.content.res.TypedArray;
 import android.net.Uri;
 import android.os.Bundle;
 import android.text.SpannableStringBuilder;
 import android.text.style.ForegroundColorSpan;
 import android.text.style.RelativeSizeSpan;
+import android.util.TypedValue;
 import android.view.Menu;
 import android.view.View;
 import android.view.ViewGroup;
@@ -26,50 +28,31 @@ import java.text.ParseException;
 import java.util.List;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
 import androidx.preference.PreferenceManager;
 import de.larsgrefer.bpm_meter.BpmMeter;
 import de.larsgrefer.bpm_meter.MeasureType;
 import de.larsgrefer.bpm_meter.R;
 import de.larsgrefer.bpm_meter.TapType;
-import io.freefair.android.injection.annotation.InjectAttribute;
-import io.freefair.android.injection.annotation.InjectView;
-import io.freefair.android.injection.annotation.XmlLayout;
-import io.freefair.android.injection.annotation.XmlMenu;
-import io.freefair.android.injection.app.InjectionAppCompatActivity;
-
-import static io.freefair.android.injection.annotation.AttributeType.COLOR;
 
 /**
  * @author Lars Grefer
  */
-@XmlLayout(R.layout.main)
-@XmlMenu(R.menu.menu)
-public class BpmMeterActivity extends InjectionAppCompatActivity {
+public class BpmMeterActivity extends AppCompatActivity {
 
     private BpmMeter bpmMeter = new BpmMeter();
 
-    @InjectView(R.id.button_tap)
     private Button tapButton;
 
-    @InjectView(R.id.text_beats_per_minute)
     private EditText beatsPerMinuteText;
-
-    @InjectView(R.id.text_beat_duration)
     private EditText beatDurationText;
 
-    @InjectView(R.id.text_measures_per_minute)
     private EditText measuresPerMinuteText;
-
-    @InjectView(R.id.text_measure_duration)
     private EditText measureDurationText;
 
-    @InjectView(R.id.spinner_measure_type)
     private Spinner measureTypeSpinner;
-
-    @InjectView(R.id.spinner_tap_type)
     private Spinner tapTypeSpinner;
 
-    @InjectView(R.id.floating_action_button)
     private FloatingActionButton fab;
 
     /**
@@ -78,6 +61,23 @@ public class BpmMeterActivity extends InjectionAppCompatActivity {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        setContentView(R.layout.main);
+
+        tapButton = findViewById(R.id.button_tap);
+        beatsPerMinuteText = findViewById(R.id.text_beats_per_minute);
+        beatDurationText = findViewById(R.id.text_beat_duration);
+
+        measuresPerMinuteText = findViewById(R.id.text_measures_per_minute);
+        measureDurationText = findViewById(R.id.text_measure_duration);
+
+        measureTypeSpinner = findViewById(R.id.spinner_measure_type);
+        tapTypeSpinner = findViewById(R.id.spinner_tap_type);
+
+        fab = findViewById(R.id.floating_action_button);
+
+        TypedArray typedArray = getTheme().obtainStyledAttributes(new int[]{android.R.attr.textColorHint});
+        textColorHint = typedArray.getColor(0, 0);
 
         tapButton.setOnClickListener(v -> {
             bpmMeter.tap();
@@ -148,7 +148,6 @@ public class BpmMeterActivity extends InjectionAppCompatActivity {
 
     }
 
-    @InjectAttribute(id = android.R.attr.textColorHint, type = COLOR)
     private int textColorHint;
 
     public void updateButtonText() {
@@ -173,6 +172,8 @@ public class BpmMeterActivity extends InjectionAppCompatActivity {
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         super.onCreateOptionsMenu(menu);
+
+        getMenuInflater().inflate(R.menu.menu, menu);
 
         Intent githubIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://github.com/larsgrefer/bpm-meter-android"));
         menu.findItem(R.id.action_github).setIntent(githubIntent);

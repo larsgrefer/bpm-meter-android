@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <style name="Theme.BpmMeter.Base" parent="Theme.AppCompat">
+    <style name="Theme.BpmMeter.Base" parent="Theme.Material3.DayNight">
 
         <item name="colorPrimary">@color/material_indigo_500</item>
         <item name="colorPrimaryDark">@color/material_indigo_700</item>
@@ -13,7 +13,7 @@
         <item name="borderlessButtonStyle">@style/BasicButtonStyle</item>
     </style>
 
-    <style name="BasicButtonStyle" parent="Widget.AppCompat.Button">
+    <style name="BasicButtonStyle" parent="Widget.Material3.Button">
 
 
     </style>

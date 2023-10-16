@@ -9,10 +9,10 @@
     <string name="promt_takte">Select the measure-type</string>
 
     <string name="promt_taps">What are you tapping?</string>
-    <string name="label_measures_per_minute">MpM</string>
-    <string name="label_measure_duration">sec</string>
-    <string name="label_beats_per_minute">BpM</string>
-    <string name="label_beat_duration">sec</string>
+    <string name="label_measures_per_minute">Measures per Minute</string>
+    <string name="label_measure_duration">Seconds</string>
+    <string name="label_beats_per_minute">Beats per Minute</string>
+    <string name="label_beat_duration">Seconds</string>
     <string name="message_parseError">Error while reading the number</string>
     <string name="button_parseError" translatable="false">OK</string>
 

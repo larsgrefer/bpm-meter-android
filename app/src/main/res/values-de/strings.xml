@@ -6,10 +6,10 @@
 
     <string name="promt_taps">Was tippen sie?</string>
 
-    <string name="label_measures_per_minute">TpM</string>
-    <string name="label_measure_duration">sek</string>
-    <string name="label_beats_per_minute">BpM</string>
-    <string name="label_beat_duration">sek</string>
+    <string name="label_measures_per_minute">Takte pro Minute</string>
+    <string name="label_measure_duration">Sekunden</string>
+    <string name="label_beats_per_minute">Beats pro Minute</string>
+    <string name="label_beat_duration">Sekunden</string>
     
     <string name="message_parseError">Fehler beim Lesen der Zahl</string>
     <string name="about">Über diese App</string>

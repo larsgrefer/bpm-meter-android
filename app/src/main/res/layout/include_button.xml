@@ -9,7 +9,7 @@
     android:text="@string/button_tap"
     style="?borderlessButtonStyle"
     tools:showIn="@layout/include_content"
-    android:textAppearance="@style/TextAppearance.AppCompat.Large"
+    android:textAppearance="@style/TextAppearance.Material3.DisplayLarge"
     android:textSize="@dimen/button_text_size"
     >
 

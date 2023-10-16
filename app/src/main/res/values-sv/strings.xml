@@ -8,7 +8,6 @@
     <string name="version">version</string>
     <string name="about">Om den här appen</string>
     <string name="action_github_long">Visa på GitHub</string>
-    <string name="label_measures_per_minute">TpM</string>
     <string name="once_per">En gång per %s</string>
     <string name="report_a_bug">Rapportera en bugg</string>
 </resources>

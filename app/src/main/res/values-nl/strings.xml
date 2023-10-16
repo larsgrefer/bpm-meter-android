@@ -7,11 +7,8 @@
     
     <string name="promt_takte">maatsoorten</string>
 
-    <string name="label_beat_duration">sec</string>
-
     <string name="measure">Maat</string>
     <string name="measures">Maaten</string>
-    <string name="label_measure_duration">sec</string>
     <string name="once_per">Eenmaal per %s</string>
     <string name="about">Over</string>
     <string name="action_github_long">Bekijk op GitHub</string>
